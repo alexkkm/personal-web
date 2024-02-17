@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { Menu, Form, Container } from 'semantic-ui-react'
+import { Menu, Form, Container, Message } from 'semantic-ui-react'
 
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 import auth from "./utils/firebase"
 
@@ -10,6 +10,8 @@ const SigninPage = () => {
     const [selectedRegister, setSelectedRegister] = useState("login")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [errorMessage, setErrorMessage] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
 
     const navigate = useNavigate();
 
@@ -18,18 +20,33 @@ const SigninPage = () => {
     }
 
     const onSubmit = () => {
+        // when button is clicked, activate is loading
+        setIsLoading(true);
+
         if (selectedRegister === "register") {
             console.log("Start Register")
-            createUserWithEmailAndPassword(auth, email, password).then(() => {
-                console.log("registered")
-                BackToHome()
-            })
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    console.log("registered")
+                    BackToHome()
+                    setIsLoading(false)
+                })
+                .catch((error) => {
+                    setErrorMessage(error.code);
+                    setIsLoading(false)
+                })
         } else if (selectedRegister === "login") {
             console.log("Start Login")
-            signInWithEmailAndPassword(auth, email, password).then(() => {
-                console.log("signined")
-                BackToHome()
-            })
+            signInWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    console.log("signined");
+                    BackToHome();
+                    setIsLoading(false);
+                })
+                .catch((error) => {
+                    setErrorMessage(error.code);
+                    setIsLoading(false);
+                })
         }
     }
 
@@ -42,7 +59,8 @@ const SigninPage = () => {
             <Form>
                 <Form.Input label="email" value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='please input email'></Form.Input>
                 <Form.Input label="password" value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='please input password'></Form.Input>
-                <Form.Button onClick={() => onSubmit()}>
+                {errorMessage && <Message negative /* "negative" make errorMessage be red color*/>{errorMessage}</Message>}
+                <Form.Button onClick={() => onSubmit()} loading={isLoading}>
                     {selectedRegister === 'login' && 'Login'}   {/* if (selectedRegister is 'login', then return true) is true, then this line becomes {'Login'} */}
                     {selectedRegister === 'register' && 'Register'}
                 </Form.Button>
