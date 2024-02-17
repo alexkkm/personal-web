@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { Menu, Form, Container } from 'semantic-ui-react'
 
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -10,11 +11,13 @@ const SigninPage = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const navigate = useNavigate();
+
     const BackToHome = () => {
-        useNavigate("/");
+        navigate("/")
     }
 
-    function onSubmit() {
+    const onSubmit = () => {
         if (selectedRegister === "register") {
             console.log("Start Register")
             createUserWithEmailAndPassword(auth, email, password).then(() => {
@@ -31,14 +34,20 @@ const SigninPage = () => {
     }
 
     return (
-        <div>
-            <button title="Login" onClick={() => setSelectedRegister("login")}></button>
-            <button title="Register" onClick={() => setSelectedRegister("register")}></button>
-
-            <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='please input email'></input>
-            <input value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='please input password'></input>
-            <button title={selectedRegister} onClick={onSubmit()}></button>
-        </div>
+        <Container>
+            <Menu widths={2}>
+                <Menu.Item active={selectedRegister === "login"} onClick={() => setSelectedRegister("login")}>Login</Menu.Item>
+                <Menu.Item active={selectedRegister === 'register'} onClick={() => setSelectedRegister("register")}>Register</Menu.Item>
+            </Menu>
+            <Form>
+                <Form.Input label="email" value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='please input email'></Form.Input>
+                <Form.Input label="password" value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='please input password'></Form.Input>
+                <Form.Button onClick={() => onSubmit()}>
+                    {selectedRegister === 'login' && 'Login'}   {/* if (selectedRegister is 'login', then return true) is true, then this line becomes {'Login'} */}
+                    {selectedRegister === 'register' && 'Register'}
+                </Form.Button>
+            </Form>
+        </Container>
 
     )
 }
