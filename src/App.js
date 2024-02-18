@@ -1,16 +1,29 @@
 import './App.css';
-import Header from './Header';
-import SigninPage from './SigninPage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Basic tools 
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+// Page of the app
+import SemanticUIPage from './SemanticUIPage';
+import FirebasePage from './FirebasePage';
+
+const HomePage = () => {
+  return (
+    <>
+      <Link to="/semantic-ui">Semantic-UI</Link>
+      <hr />
+      <Link to="/firebase">Firebase</Link>
+    </>)
+}
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<>Home Page</>}>Home Page</Route>
-        <Route path="/home" element={<>Home Page</>}>Home Page</Route>
-        <Route path="/signin" element={<SigninPage />} />
+        <Route path="/" element={<HomePage />}>Home Page</Route>
+        <Route path="/home" element={<HomePage />}>Home Page</Route>
+        <Route path="/semantic-ui" element={<SemanticUIPage />} />
+        <Route path="/firebase" element={<FirebasePage />} />
       </Routes>
     </BrowserRouter>
   );

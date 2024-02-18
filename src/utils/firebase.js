@@ -1,8 +1,10 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+// This file will be run when the export "auth" is required by other file, so no need to run this js file seperately
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore/lite';
+
+// The unique firebaseConfiguration json for the project
 const firebaseConfig = {
     apiKey: "AIzaSyDhcs7seSxsRF1pEeZ8MP4wCbhAD8f-EVg",
     authDomain: "personal-alexkkm.firebaseapp.com",
@@ -14,9 +16,14 @@ const firebaseConfig = {
     measurementId: "G-BKST8M54FH"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// Initialize the firebase service
+const FirebaseApp = initializeApp(firebaseConfig);
 
-const auth = getAuth(app)
+// Create the "auth" object for firebase authentication serivce by using fireabse service instance "FirebaseApp" at above line
+const auth = getAuth(FirebaseApp)
 
+// Create the "db" object for firebase Firestore serivce by using fireabse service instance "FirebaseApp" at above line
+const db = getFirestore(FirebaseApp);
+
+// Export the object so that other file can use the objects
 export default auth;
