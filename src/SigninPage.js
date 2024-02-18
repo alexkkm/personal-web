@@ -4,7 +4,8 @@ import { Menu, Form, Container, Message } from 'semantic-ui-react'
 
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
-import auth from "./utils/firebase"
+// self define 
+import firebaseTools from "./utils/firebase"
 
 const SigninPage = () => {
     const [selectedRegister, setSelectedRegister] = useState("login")
@@ -25,7 +26,7 @@ const SigninPage = () => {
 
         if (selectedRegister === "register") {
             console.log("Start Register")
-            createUserWithEmailAndPassword(auth, email, password)
+            createUserWithEmailAndPassword(firebaseTools.auth, email, password)
                 .then(() => {
                     console.log("registered")
                     BackToHome()
@@ -37,7 +38,7 @@ const SigninPage = () => {
                 })
         } else if (selectedRegister === "login") {
             console.log("Start Login")
-            signInWithEmailAndPassword(auth, email, password)
+            signInWithEmailAndPassword(firebaseTools.auth, email, password)
                 .then(() => {
                     console.log("signined");
                     BackToHome();

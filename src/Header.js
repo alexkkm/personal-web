@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, Search } from 'semantic-ui-react';
 
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import auth from './utils/firebase';
+import firebaseTools from './utils/firebase';
 
 // Define a header thatwill be display no matter on what pages
 const Header = () => {
@@ -11,8 +11,7 @@ const Header = () => {
 
     // do just after the "Header" is rendered
     useEffect(() => {
-        onAuthStateChanged(auth, (currentUser) => { setUser(currentUser) });
-        console.log("Hi")
+        onAuthStateChanged(firebaseTools.auth, (currentUser) => { setUser(currentUser) });
     }, [])
 
     return <Menu>
@@ -29,7 +28,7 @@ const Header = () => {
             {user ? (<>
                 <Menu.Item as={Link} to='/new-post'>New Post</Menu.Item>
                 <Menu.Item as={Link} to='/account'>Account</Menu.Item>
-                <Menu.Item onClick={() => signOut(auth)}>Sign Out</Menu.Item>
+                <Menu.Item onClick={() => signOut(firebaseTools.auth)}>Sign Out</Menu.Item>
             </>) : (<Menu.Item as={Link} to='/signin'>Login/Register</Menu.Item>)}
 
         </Menu.Menu>
