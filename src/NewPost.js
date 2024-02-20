@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Container, Header, Form, Image, Button } from 'semantic-ui-react'
 
 import firebaseTools from "./utils/firebase"
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs, doc, setDoc, Timestamp } from "firebase/firestore"
+
 
 const NewPost = () => {
     const [title, setTitle] = useState("")
@@ -31,9 +32,17 @@ const NewPost = () => {
 
     const previewUrl = file ? URL.createObjectURL(file) : "https://react.semantic-ui.com/images/wireframe/image.png";
 
+    const Post = () => {
+        const documentRef = doc(collection(firebaseTools.firestoreDB, "posts"))
+        setDoc(documentRef, {
+            title, content, topic: selectedTopic, createdAt: Timestamp.now(),
+
+        })
+        alert("Already upload the post")
+    }
     return (<Container>
         <Header>Create Post</Header>
-        <Form>
+        <Form onSubmit={Post}>
             <Image src={previewUrl} size="small" floated='left'></Image>
             <Button basic as="label" htmlFor="post-image">Upload the photo</Button>
             <Form.Input type="file" id="post-image" style={{ display: 'none' }} onChange={(e) => { setFile(e.target.files[0]) }}></Form.Input>
