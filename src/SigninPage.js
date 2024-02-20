@@ -16,10 +16,6 @@ const SigninPage = () => {
 
     const navigate = useNavigate();
 
-    const BackToHome = () => {
-        navigate("/")
-    }
-
     const onSubmit = () => {
         // when button is clicked, activate is loading
         setIsLoading(true);
@@ -29,7 +25,7 @@ const SigninPage = () => {
             createUserWithEmailAndPassword(firebaseTools.auth, email, password)
                 .then(() => {
                     console.log("registered")
-                    BackToHome()
+                    navigate("/")
                     setIsLoading(false)
                 })
                 .catch((error) => {
@@ -41,7 +37,7 @@ const SigninPage = () => {
             signInWithEmailAndPassword(firebaseTools.auth, email, password)
                 .then(() => {
                     console.log("signined");
-                    BackToHome();
+                    navigate("/")
                     setIsLoading(false);
                 })
                 .catch((error) => {

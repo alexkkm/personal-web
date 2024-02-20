@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './Header';
-import NewPost from './NewPost';
+import NewPostPage from './NewPost';
 import PostsPage from './Posts';
 import SigninPage from './SigninPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<PostsPage />}>Home Page</Route>
         <Route path="/home" element={<PostsPage />}>Home Page</Route>
         <Route path="/signin" element={<SigninPage />} />
-        <Route path="/new-post" element={<NewPost />} />
+        <Route path="/new-post" element={<NewPostPage />} />
 
       </Routes>
     </BrowserRouter>
