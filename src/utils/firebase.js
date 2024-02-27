@@ -2,7 +2,7 @@
 
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore/lite';
+import { getFirestore } from 'firebase/firestore';
 
 // The unique firebaseConfiguration json for the project
 const firebaseConfig = {
@@ -22,8 +22,10 @@ const FirebaseApp = initializeApp(firebaseConfig);
 // Create the "auth" object for firebase authentication serivce by using fireabse service instance "FirebaseApp" at above line
 const auth = getAuth(FirebaseApp)
 
-// Create the "db" object for firebase Firestore serivce by using fireabse service instance "FirebaseApp" at above line
-const db = getFirestore(FirebaseApp);
+// Create the "firestoreDB" object for firebase Firestore serivce by using fireabse service instance "FirebaseApp" at above line
+const firestoreDB = getFirestore(FirebaseApp);
 
+// Pack the "auth" and "firestoreDB" into one singal object "firebaseTools" for exporting
+const firebaseTools = { auth, firestoreDB }
 // Export the object so that other file can use the objects
-export default auth;
+export default firebaseTools;
