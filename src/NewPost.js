@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import firebaseTools from "./utils/firebase"
 import { collection, getDocs, doc, setDoc, Timestamp } from "firebase/firestore"
 import { onAuthStateChanged } from 'firebase/auth'
+import { ref, getDownloadURL, uploadBytes } from 'firebase/storage'
 
 const NewPostPage = () => {
     const [currentUserInfo, setCurrentUserInfo] = useState([])
@@ -49,25 +50,38 @@ const NewPostPage = () => {
         const collectionRef = collection(firebaseTools.firestoreDB, "posts");
         // create a document refernece for the document within the collection referred by "collectionRef"
         const documentRef = doc(collectionRef);
-        // write to the document referred by "documentRef" with the content {title: ...}
-        setDoc(documentRef, {
-            title: title,
-            content,    // same as "content: content"
-            topic: selectedTopic,
-            createdAt: Timestamp.now(),
-            author: {
-                displayName: currentUserInfo.displayName || "",
-                photoURL: currentUserInfo.photoURL || "",
-                uid: currentUserInfo.uid,
-                email: currentUserInfo.email
-            },
-        }).then(() => {
-            // raise an alert if successfully submit post
-            alert("Already upload the post")
-            // navigate to home page
-            navigate("/")
-        })
 
+        // define the file reference of "post/images/{documentRef.id}" as "fileRef"
+        const fileRef = ref(firebaseTools.firebaseStorage, 'post-images/' + documentRef.id)
+
+        // define a list that consists of "contentType" of the file as "metadata"
+        const metadata = { contentType: file.type }
+
+        // upload the data to the firebase storage location referred by "fileRef"
+        uploadBytes(fileRef, file, metadata).then(() => {
+            // get back the url of the uploaded file as callback "imageURL"
+            getDownloadURL(fileRef).then((imageURL) => {
+                // write to the document referred by "documentRef" with the content {title: ...}
+                setDoc(documentRef, {
+                    title: title,
+                    content,    // same as "content: content"
+                    topic: selectedTopic,
+                    createdAt: Timestamp.now(),
+                    author: {
+                        displayName: currentUserInfo.displayName || "",
+                        photoURL: currentUserInfo.photoURL || "",
+                        uid: currentUserInfo.uid,
+                        email: currentUserInfo.email
+                    },
+                    imageURL,
+                }).then(() => {
+                    // raise an alert if successfully submit post
+                    alert("Already upload the post")
+                    // navigate to home page
+                    navigate("/")
+                })
+            })
+        })
     }
 
     return (<Container>
