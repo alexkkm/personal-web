@@ -126,36 +126,25 @@ const UploadArea = () => {
 
 // Component of demonstration of firebase fetching functions
 const FetchingArea = () => {
-    // parameter that save the fetching result from collection "topics"
+    // parameter that save the fetching result in string
     const [data, setData] = useState("")
+    // parameter that save the fetching result in list
+    const [result, setResult] = useState({});
+
 
     // useEffect() will be called just after the "FetchingArea" is rendered
     useEffect(() => {
-        // getDocs(): fetch the data from the firestore collection "topics", and update the "topic selection dropdown" by the data fetched
-        getDocs(collection(firebaseTools.firestoreDB, "topics")).then((collectionSnapShot) => {
+
+        // getDocs(): fetch the data from the firestore collection "tutorial"
+        const fetchResult = getDocs(collection(firebaseTools.firestoreDB, "tutorial")).then((collectionSnapShot) => {
             const fetching = collectionSnapShot.docs.map((doc) => {
                 return doc.data();
             });
             console.log(fetching);
             setData(fetching)
         });
-    }, []);
 
-    return (
-        <div>
-            <h3>Fetching Data</h3>
-            <FetchTutorialDocuments />
-            <h4>Fetch from collection "Topics"</h4>
-            <p>{JSON.stringify(data)}</p>
-        </div>
-    )
-}
 
-const FetchTutorialDocuments = () => {
-    // parameter that save the fetching result
-    const [result, setResult] = useState({});
-
-    useEffect(() => {
         // create an async function "fetchFromTutorial"
         const fetchFromTutorial = async () => {
             /* 
@@ -178,17 +167,23 @@ const FetchTutorialDocuments = () => {
         };
         // excute the async function "fectchFromTutorial()"
         fetchFromTutorial();
+
     }, []);
 
     return (
         <div>
-            <h4>Documents of "tutorial" collection that exists field: "content"</h4>
-            {Object.keys(result).map((id) => (
-                <div key={id}>id: {id}, content: {JSON.stringify(result[id])}</div>
-            ))}
+            <h3>Fetching Data</h3>
+            <div>
+                <h4>Documents of "tutorial" collection that exists field: "content"</h4>
+                {Object.keys(result).map((id) => (
+                    <div key={id}>id: {id}, content: {JSON.stringify(result[id])}</div>
+                ))}
+            </div>
+            <h4>Fetch from collection "Topics"</h4>
+            {<p>{JSON.stringify(data)}</p>}
         </div>
-    );
-};
+    )
+}
 
 // Page of tutorials of firebase functions
 const FirebasePage = () => {
