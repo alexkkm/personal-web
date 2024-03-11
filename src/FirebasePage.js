@@ -96,7 +96,7 @@ const UploadArea = () => {
     const navigate = useNavigate();
 
     // submit the post to the firestore
-    const SubmitPost = () => {
+    const SubmitDocument = () => {
         // create a collection refernece for the collection "tutorial"
         const collectionRef = collection(firebaseTools.firestoreDB, "tutorial");
         // create a document refernece for the document within the collection referred by "collectionRef"
@@ -106,8 +106,8 @@ const UploadArea = () => {
             [field]: value,
             createdAt: Timestamp.now(),
         }).then(() => {
-            // raise an alert if successfully submit post
-            alert("Already upload the post")
+            // raise an alert if successfully submit document to collection
+            alert("Already upload the document")
             // navigate to home page
             navigate("/")
         }).catch((err) => { console.log(err) })
@@ -116,18 +116,20 @@ const UploadArea = () => {
 
     return (
         <div>
-            <h3>Uploading data</h3>
-            <button onClick={SubmitPost}>Upload</button>
-            <p>Content:</p>
+            <h3>Uploading document</h3>
+            <p>Content to be upload to collection "tutorial":</p>
             <input value={field} placeholder="field" onChange={(e) => { setField(e.target.value) }} />
             <input value={value} placeholder="value" onChange={(e) => { setValue(e.target.value) }} />
+            <button onClick={SubmitDocument}>Upload</button>
         </div>)
 }
 
 // Component of demonstration of firebase fetching functions
 const FetchingArea = () => {
     // parameter that save the fetching result in string
-    const [data, setData] = useState("")
+    const [string, setString] = useState("")
+    // parameter that save the fetching result in list
+    const [list, setList] = useState([]);
     // parameter that save the fetching result in list
     const [result, setResult] = useState({});
 
@@ -136,14 +138,16 @@ const FetchingArea = () => {
     useEffect(() => {
 
         // getDocs(): fetch the data from the firestore collection "tutorial"
-        const fetchResult = getDocs(collection(firebaseTools.firestoreDB, "tutorial")).then((collectionSnapShot) => {
+        const fetchInList = getDocs(collection(firebaseTools.firestoreDB, "tutorial")).then((collectionSnapShot) => {
             const fetching = collectionSnapShot.docs.map((doc) => {
-                return doc.data();
+                return {
+                    id: doc.id,
+                    ...doc.data()
+                }
             });
             console.log(fetching);
-            setData(fetching)
+            setList(fetching);
         });
-
 
         // create an async function "fetchFromTutorial"
         const fetchFromTutorial = async () => {
@@ -167,20 +171,23 @@ const FetchingArea = () => {
         };
         // excute the async function "fectchFromTutorial()"
         fetchFromTutorial();
-
     }, []);
 
     return (
         <div>
             <h3>Fetching Data</h3>
             <div>
+                <h4>Fetch all documents in collection "tutorial"</h4>
+                {list.map((item, id) => (
+                    <div key={id}>{id}: {JSON.stringify(item)}</div>
+                ))}
+            </div>
+            <div>
                 <h4>Documents of "tutorial" collection that exists field: "content"</h4>
                 {Object.keys(result).map((id) => (
                     <div key={id}>id: {id}, content: {JSON.stringify(result[id])}</div>
                 ))}
             </div>
-            <h4>Fetch from collection "Topics"</h4>
-            {<p>{JSON.stringify(data)}</p>}
         </div>
     )
 }
