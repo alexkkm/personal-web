@@ -1,9 +1,8 @@
+import "./test.css"
+
 const Test = () => {
     return (
-        <>
-            Test Page
-
-        </>
+        <p>Test Page</p>
     )
 }
 

@@ -17,6 +17,8 @@ const HomePage = () => {
       <hr />
       <Link to="/firebase">Firebase</Link>
       <hr />
+      <Link to="/cyberpunk">Cyberpunk Theme</Link>
+      <hr />
       <Link to="/test">Test</Link>
     </>)
 }

@@ -1,409 +1,209 @@
-import "./cyberpunk.css";
+import "./cyberpunk.css"
 
-const CyberpunkPage = () => {
+
+const CyberPunkPage = () => {
     return (
-        <div>
-            <header style={{ backgroundColor: '#000', height: '50px' }}>
-                <a href="https://github.com/gwannon/Cyberpunk-2077-theme-css" style={{ color: '#f9f002', fontSize: '2rem' }}>Github</a>
-            </header>
-            <section className="cyberpunk">
-                <a className="cyberpunk">Link red_</a>
-                <button className="cyberpunk green">Button green_</button>
-                <a className="cyberpunk purple">Link purple_</a>
-                <button className="cyberpunk blue">Button blue_</button>
-            </section>
-            <section className="cyberpunk black both">
-                <h1 className="cyberpunk">H1 title</h1>
-                <h1 className="cyberpunk glitched">H1 title glitched</h1>
-                <h2 className="cyberpunk">H2 title</h2>
-                <h2 className="cyberpunk glitched">H2 title glitched</h2>
-                <h3 className="cyberpunk">H3 title</h3>
-                <h3 className="cyberpunk glitched">H3 title glitched</h3>
-                <h4 className="cyberpunk">H4 title</h4>
-                <h4 className="cyberpunk glitched">H4 title glitched</h4>
-                <hr className="cyberpunk" />
-                <hr className="cyberpunk glitched" />
-            </section>
-            <section className="cyberpunk both">
-                <form style={{ maxWidth: '500px' }}>
-                    <input className="cyberpunk" type="text" />
-                    <input className="cyberpunk" type="date" />
-                    <input className="cyberpunk" type="time" />
-                    <input className="cyberpunk" type="file" />
-                    <input className="cyberpunk" type="phone" />
-                    <input className="cyberpunk" type="number" />
-                    <input className="cyberpunk" type="password" />
-                    <textarea className="cyberpunk"></textarea>
-                    <select className="cyberpunk">
-                        <option>Item 1</option>
-                        <option>Item 2</option>
-                        <option>Item 3</option>
-                    </select><br />
-                    <label className="cyberpunk"><input className="cyberpunk" name="test" type="radio" /> RADIO BUTTON Lorem ipsum sid amet.</label><br />
-                    <label className="cyberpunk"><input className="cyberpunk" name="test" type="radio" checked="checked" /> RADIO BUTTON Lorem ipsum sid amet.</label><br />
-                    <label className="cyberpunk"><input className="cyberpunk" type="checkbox" /> CHECKBOX Lorem ipsum sid amet.</label><br />
-                    <label className="cyberpunk"><input className="cyberpunk" type="checkbox" checked="checked" /> CHECKBOX Lorem ipsum sid amet.</label><br />
-                    <button type="submit" className="cyberpunk red">Submit_</button>
-                </form>
-            </section>
-            <section className="cyberpunk black">
-                <img className="cyberpunk" src="https://dummyimage.com/600x400/ff00ff/fff" alt="" />
-                <img className="cyberpunk dotted" src="https://dummyimage.com/600x400/ff00ff/fff" alt="" />
-            </section>
-            <section className="cyberpunk">
-                <h1 className="cyberpunk">H1 title</h1>
-                <h1 className="cyberpunk glitched">H1 title glitched</h1>
-                <h2 className="cyberpunk">H2 title</h2>
-                <h2 className="cyberpunk glitched">H2 title glitched</h2>
-                <h3 className="cyberpunk">H3 title</h3>
-                <h3 className="cyberpunk glitched">H3 title glitched</h3>
-                <h4 className="cyberpunk">H4 title</h4>
-                <h4 className="cyberpunk glitched">H4 title glitched</h4>
-                <hr className="cyberpunk" />
-                <hr className="cyberpunk glitched" />
-            </section>
-            <section className="cyberpunk black">
-                <p className="cyberpunk">Cyberpunk is a subgenre of science fiction in a dystopian <a href="#">futuristic setting that</a> tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <ul className="cyberpunk">
-                    <li>Cyberpunk is a subgenre of science fiction in a dystopian <a href="#">futuristic setting that</a> tends to focus on a "combination of low-life and high tech"</li>
-                    <li className="glitched">featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.</li>
-                    <li>Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology,</li>
-                    <li>and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</li>
-                    <li>Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"</li>
-                    <li>featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.</li>
-                    <li>Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology,</li>
-                    <li>and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</li>
-                </ul>
-                <p className="cyberpunk inverse scannedv">Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <p className="cyberpunk inverse dotted scannedh">Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <ol className="cyberpunk">
-                    <li>Cyberpunk is a subgenre of science fiction in a dystopian <a href="#">futuristic setting that</a> tends to focus on a "combination of low-life and high tech"</li>
-                    <li>featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.</li>
-                    <li>Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology,</li>
-                    <li className="glitched">and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</li>
-                    <li>Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"</li>
-                    <li>featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.</li>
-                    <li>Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology,</li>
-                    <li>and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</li>
-                </ol>
-            </section>
-            <section className="cyberpunk">
-                <p className="cyberpunk">Cyberpunk is a subgenre of science fiction in a dystopian <a href="#">futuristic setting that</a> tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <p className="cyberpunk scannedh">Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <p className="cyberpunk scannedv">Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <ul className="cyberpunk">
-                    <li>Cyberpunk is a subgenre of science fiction in a dystopian <a href="#">futuristic setting that</a> tends to focus on a "combination of low-life and high tech"</li>
-                    <li className="glitched">featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.</li>
-                    <li>Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology,</li>
-                    <li>and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</li>
-                    <li>Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"</li>
-                    <li>featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.</li>
-                    <li>Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology,</li>
-                    <li>and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</li>
-                </ul>
-                <p className="cyberpunk inverse">Cyberpunk is a subgenre of science fiction in a dystopian <a href="#">futuristic setting that</a> tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <p className="cyberpunk inverse scannedh">Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <p className="cyberpunk inverse scannedv">Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <p className="cyberpunk inverse dotted">Cyberpunk is a subgenre of science fiction in a dystopian <a href="#">futuristic setting that</a> tends to focus on a "combination of low-life and high tech"[1] featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.[2] Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology, and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</p>
-                <ol className="cyberpunk">
-                    <li>Cyberpunk is a subgenre of science fiction in a dystopian <a href="#">futuristic setting that</a> tends to focus on a "combination of low-life and high tech"</li>
-                    <li>featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.</li>
-                    <li >Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology,</li>
-                    <li>and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</li>
-                    <li>Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"</li>
-                    <li className="glitched">featuring advanced technological and scientific achievements, such as artificial intelligence and cybernetics, juxtaposed with a degree of breakdown or radical change in the social order.</li>
-                    <li>Much of cyberpunk is rooted in the New Wave science fiction movement of the 1960s and 1970s, when writers like Philip K. Dick, Roger Zelazny, John Brunner, J. G. Ballard, Philip José Farmer and Harlan Ellison examined the impact of drug culture, technology,</li>
-                    <li>and the sexual revolution while avoiding the utopian tendencies of earlier science fiction.</li>
-                </ol>
-            </section>
-            <section className="cyberpunk black">
-                <form style={{ maxWidth: "500px" }}>
-                    <input className="cyberpunk" type="text" />
-                    <input className="cyberpunk" type="date" />
-                    <input className="cyberpunk" type="time" />
-                    <input className="cyberpunk" type="file" />
-                    <input className="cyberpunk" type="phone" />
-                    <input className="cyberpunk" type="number" />
-                    <input className="cyberpunk" type="password" />
-                    <textarea className="cyberpunk"></textarea>
-                    <select className="cyberpunk">
-                        <option>Item 1</option>
-                        <option>Item 2</option>
-                        <option>Item 3</option>
-                    </select><br />
-                    <label className="cyberpunk"><input className="cyberpunk" name="test2" type="radio" /> RADIO BUTTON Lorem ipsum sid amet.</label><br />
-                    <label className="cyberpunk"><input className="cyberpunk" name="test2" type="radio" checked="checked" /> RADIO BUTTON Lorem ipsum sid amet.</label><br />
-                    <label className="cyberpunk"><input className="cyberpunk" type="checkbox" /> CHECKBOX Lorem ipsum sid amet.</label><br />
-                    <label className="cyberpunk"><input className="cyberpunk" type="checkbox" checked="checked" /> CHECKBOX Lorem ipsum sid amet.</label><br />
-                    <button type="submit" className="cyberpunk2077 blue">Submit_</button>
-                </form>
-            </section>
-            <section className="cyberpunk">
-                <img className="cyberpunk" src="https://dummyimage.com/600x400/ff00ff/fff" alt="" />
-                <img className="cyberpunk dotted" src="https://dummyimage.com/600x400/ff00ff/fff" alt="" />
-            </section>
-            <section className="cyberpunk black both">
-                <div className="boxtree">
-                    <div className="resolved children2 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
+        <div className="content" translate="no" data-new-gr-c-s-check-loaded="14.1009.0" data-gr-ext-installed="">
+            <div className="app-skeleton">
+                <header className="app-header">
+                    <div className="app-header__anchor"><span className="app-header__anchor__text">Night-City NetWire</span></div>
+                    <nav>
+                        <ul className="nav">
+                            <li className="nav__item">
+                                <a className="nav__link" href="#"><span className="nav__link__element">Home</span></a>
+                            </li>
+                            <li className="nav__item">
+                                <a className="nav__link nav__link--active" href="#">
+                                    <span className="nav__link__element">Messages</span><span className="nav__link__element"><span className="badge">11</span></span>
+                                </a>
+                            </li>
+                            <li className="nav__item">
+                                <a className="nav__link" href="#"><span className="nav__link__element">Shop</span></a>
+                            </li>
+                            <li className="nav__item">
+                                <a className="nav__link" href="#"><span className="nav__link__element">Map</span></a>
+                            </li>
+                            <li className="nav__item">
+                                <a className="nav__link" href="#"><span className="nav__link__element">Files</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div></div>
+                </header>
+                <div className="app-container">
+                    <div className="app-a">
+                        <div className="segment-topbar">
+                            <div className="segment-topbar__header">
+                                <h3 className="text-heading3 segment-topbar__title">Messages</h3>
+                            </div>
+                            <div className="segment-topbar__aside">
+                                <div className="button-toolbar">
+                                    <a className="button button--primary button--size-lg">
+                                        <svg className="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <form className="form-search">
+                            <div className="form-group">
+                                <div className="form-control form-control--with-addon">
+                                    <input name="query" placeholder="Search..." type="text" />
+                                    <div className="form-control__addon form-control__addon--prefix">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div className="nav-section">
+                            <div className="nav-section__header">
+                                <h2 className="nav-section__title">Feeds</h2>
+                            </div>
+                            <div className="nav-section__body">
+                                <ul className="nav">
+                                    <li className="nav__item">
+                                        <a className="nav__link" href="#">
+                                            <span className="channel-link conversation-link--unread">
+                                                <span className="channel-link__icon">#</span><span className="channel-link__element">Afterlife</span><span className="channel-link__element"><span className="badge">3</span></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li className="nav__item">
+                                        <a className="nav__link" href="#">
+                                            <span className="channel-link"><span className="channel-link__icon">#</span><span className="channel-link__element">NCPD-Gigs</span></span>
+                                        </a>
+                                    </li>
+                                    <li className="nav__item">
+                                        <a className="nav__link" href="#">
+                                            <span className="channel-link"><span className="channel-link__icon">#</span><span className="channel-link__element">Pacifica</span></span>
+                                        </a>
+                                    </li>
+                                    <li className="nav__item">
+                                        <a className="nav__link nav__link--active" href="#">
+                                            <span className="channel-link"><span className="channel-link__icon">#</span><span className="channel-link__element">Watson</span></span>
+                                        </a>
+                                    </li>
+                                    <li className="nav__item">
+                                        <a className="nav__link" href="#">
+                                            <span className="channel-link conversation-link--unread">
+                                                <span className="channel-link__icon">#</span><span className="channel-link__element">_T_SQUAD</span><span className="channel-link__element"><span className="badge">2</span></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="nav-section">
+                            <div className="nav-section__header">
+                                <h2 className="nav-section__title">Direct</h2>
+                            </div>
+                            <div className="nav-section__body">
+                                <ul className="nav">
+                                    <li className="nav__item">
+                                        <a className="nav__link" href="#">
+                                            <span className="conversation-link conversation-link--online conversation-link--unread">
+                                                <span className="conversation-link__icon"></span><span className="conversation-link__element">Rogue Amendiares</span><span className="conversation-link__element"><span className="badge">5</span></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li className="nav__item">
+                                        <a className="nav__link" href="#">
+                                            <span className="conversation-link conversation-link--online conversation-link--unread">
+                                                <span className="conversation-link__icon"></span><span className="conversation-link__element">Takemura</span><span className="conversation-link__element"><span className="badge">1</span></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li className="nav__item">
+                                        <a className="nav__link" href="#">
+                                            <span className="conversation-link"><span className="conversation-link__icon"></span><span className="conversation-link__element">Wakado O., Regina Jones</span></span>
+                                        </a>
+                                    </li>
+                                    <li className="nav__item">
+                                        <a className="nav__link" href="#">
+                                            <span className="conversation-link"><span className="conversation-link__icon"></span><span className="conversation-link__element">Dexter DeShawn</span></span>
+                                        </a>
+                                    </li>
+                                    <li className="nav__item">
+                                        <a className="nav__link" href="#">
+                                            <span className="conversation-link"><span className="conversation-link__icon"></span><span className="conversation-link__element">Megabuilding H10 Administration</span></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
+                    <div className="app-main">
+                        <div className="channel-feed">
+                            <div className="segment-topbar">
+                                <div className="segment-topbar__header">
+                                    <span className="segment-topbar__overline segment-topbar__overline">NetWire_Seed: d869db7fe62fb07c25a0403ecaea55031744b5fb</span>
+                                    <h4 className="text-heading4 segment-topbar__title">
+                                        <span className="channel-link"><span className="channel-link__icon">#</span><span className="channel-link__element">Watson</span></span>
+                                    </h4>
+                                </div>
+                                <div className="segment-topbar__aside">
+                                    <div className="button-toolbar">
+                                        <a className="button button--default">
+                                            <svg className="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M18 9.5c2.481 0 4.5 1.571 4.5 3.503 0 1.674-1.703 3.48-4.454 3.48-.899 0-1.454-.156-2.281-.357-.584.358-.679.445-1.339.686.127-.646.101-.924.081-1.56-.583-.697-1.007-1.241-1.007-2.249 0-1.932 2.019-3.503 4.5-3.503zm0-1.5c-3.169 0-6 2.113-6 5.003 0 1.025.37 2.032 1.023 2.812.027.916-.511 2.228-.997 3.184 1.302-.234 3.15-.754 3.989-1.268.709.173 1.388.252 2.03.252 3.542 0 5.954-2.418 5.954-4.98.001-2.906-2.85-5.003-5.999-5.003zm-.668 6.5h-1.719v-.369l.938-1.361v-.008h-.869v-.512h1.618v.396l-.918 1.341v.008h.95v.505zm3.035 0h-2.392v-.505l1.306-1.784v-.011h-1.283v-.7h2.25v.538l-1.203 1.755v.012h1.322v.695zm-10.338 9.5c1.578 0 2.971-1.402 2.971-3h-6c0 1.598 1.45 3 3.029 3zm.918-7.655c-.615-1.001-.947-2.159-.947-3.342 0-3.018 2.197-5.589 5.261-6.571-.472-1.025-1.123-1.905-2.124-2.486-.644-.374-1.041-1.07-1.04-1.82v-.003c0-1.173-.939-2.123-2.097-2.123s-2.097.95-2.097 2.122v.003c.001.751-.396 1.446-1.041 1.82-4.667 2.712-1.985 11.715-6.862 13.306v1.749h9.782c.425-.834.931-1.764 1.165-2.655zm-.947-15.345c.552 0 1 .449 1 1 0 .552-.448 1-1 1s-1-.448-1-1c0-.551.448-1 1-1z"></path>
+                                            </svg>
+                                        </a>
+                                        <a className="button button--default">
+                                            <svg className="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M6 16h-6v-3h6v3zm-2-5v-10h-2v10h2zm-2 7v5h2v-5h-2zm13-7h-6v-3h6v3zm-2-5v-5h-2v5h2zm-2 7v10h2v-10h-2zm13 3h-6v-3h6v3zm-2-5v-10h-2v10h2zm-2 7v5h2v-5h-2z"></path>
+                                            </svg>
+                                        </a>
+                                        <a className="button button--default">
+                                            <svg className="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M12 18c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="channel-feed__body">
+                                <div className="message">
+                                    <div className="message__body">
+                                        <div>I got a gig lined up in Watson, no biggie. If you prove useful, expect more side gigs coming your way. I need a half-decent netrunner. Hit me up, provide credentials, eddies on completion.</div>
+                                    </div>
+                                    <div className="message__footer"><span className="message__authoring">V. M. Vargas</span> - 11:04pm</div>
+                                </div>
+                                <div className="message">
+                                    <div className="message__body">
+                                        <div>I got a gig lined up in Watson, no biggie. If you prove useful, expect more side gigs coming your way. I need a half-decent netrunner. Hit me up, provide credentials, eddies on completion.</div>
+                                    </div>
+                                    <div className="message__footer"><span className="message__authoring">V. M. Vargas</span> - 11:04pm</div>
+                                </div>
+                            </div>
+                            <div className="channel-feed__footer">
+                                <form className="channel-message-form" action="#">
+                                    <div className="form-group">
+                                        <label className="form-label" htmlFor="message">Message</label>
+                                        <div className="form-control"><textarea id="message" className="form-control" name="message"></textarea></div>
+                                    </div>
+                                    <div className="form-footer">
+                                        <button className="button button--primary button--size-xl" type="submit"><span className="button__content">Send</span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div className="children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children2 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children2 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children2 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children2 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children0 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
+                    <div className="app-b">
+                        <div className="pad">
+                            <div className="pad__body">
+                                <h4 className="text-heading3 undefined">What's this?</h4>
+                                <p className="text-paragraph1 undefined">A <em>fake</em> Slack or Discord type of app inspired by Cyberpunk 2077. This app is static, eg. not implementing much logic.</p>
+                                <p className="text-paragraph1 undefined">The goal is: showcasing a start of a UI kit. If you've played the game, you' might be able to pick-up some similarities with the in-game menus.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-            <section className="cyberpunk both">
-                <div className="boxtree">
-                    <div className="resolved children2 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children2 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children2 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children2 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width3">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children2 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width2" style={{ '--resolved-text': '' }}>
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="children1 width2">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="resolved children1 width1" style={{ '--resolved-text': 'FINISHED' }}>
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children1 width1">
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                    <div className="pending children0 width1" style={{ "--pending-text": 'FORBIDDEN' }}>
-                        <h2>Lorem ipsum sid amet.</h2>
-                        Cyberpunk is a subgenre of science fiction in a dystopian futuristic setting that tends to focus on a "combination of low-life and high tech"
-                    </div>
-                </div>
-            </section>
-            <section className="cyberpunk black">
-                <ul className="steps">
-                    <li>Text 1</li>
-                    <li>Text extra extra large 2</li>
-                    <li>Texto 3</li>
-                    <li>Text extra extra large 4 </li>
-                    <li>Text 5<br />new line<br />new line</li>
-                    <li>Text large 6</li>
-                    <li className="current">Text 7</li>
-                    <li>Text 8</li>
-                    <li>Text 9</li>
-                    <li>Text 10</li>
-                </ul>
-            </section>
-            <section className="cyberpunk">
-                <ul className="steps">
-                    <li>Text 1</li>
-                    <li>Text extra extra large 2</li>
-                    <li>Texto 3</li>
-                    <li className="current">Text extra extra large 4 </li>
-                    <li>Text 5<br />new line<br />new line</li>
-                    <li>Text large 6</li>
-                    <li>Text 7</li>
-                    <li>Text 8</li>
-                    <li>Text 9</li>
-                    <li>Text 10</li>
-                </ul>
-            </section>
-            <aside className="cyberpunk">
-                <ul>
-                    <li><a href="#">&#9760; 555 555 555</a></li>
-                    <li><a href="#">&#x2622; Contact us</a></li>
-                    <li><a href="#">&#x267B; Location in the map</a></li>
-                </ul>
-            </aside>
-            <footer style={{ "background-color": "#000", "height": "50px" }}></footer>
+            </div>
         </div>
     )
 }
 
-export default CyberpunkPage;
+export default CyberPunkPage;
