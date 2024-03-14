@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 // Page of the app
 import SemanticUIPage from './SemanticUIPage';
 import FirebasePage from './FirebasePage';
+import Test from './Test';
+import FontTemplate from './font/font';
+import CyberpunkPage from './cyberpunk_theme/cyberpunk';
 
 const HomePage = () => {
   return (
@@ -13,6 +16,8 @@ const HomePage = () => {
       <Link to="/semantic-ui">Semantic-UI</Link>
       <hr />
       <Link to="/firebase">Firebase</Link>
+      <hr />
+      <Link to="/test">Test</Link>
     </>)
 }
 
@@ -22,8 +27,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}>Home Page</Route>
         <Route path="/home" element={<HomePage />}>Home Page</Route>
+        <Route path="/test" element={<Test />} />
         <Route path="/semantic-ui" element={<SemanticUIPage />} />
         <Route path="/firebase" element={<FirebasePage />} />
+        <Route path="/font" element={<FontTemplate />} />
+        <Route path="/cyberpunk" element={<CyberpunkPage />} />
       </Routes>
     </BrowserRouter>
   );
