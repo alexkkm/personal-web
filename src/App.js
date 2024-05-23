@@ -9,6 +9,7 @@ import FirebasePage from './FirebasePage';
 import Test from './Test';
 import FontTemplate from './font/font';
 import CyberpunkPage from './cyberpunk_theme/cyberpunk';
+import DarkThemePage from './cyberpunk_theme/darktheme';
 
 const HomePage = () => {
   return (
@@ -18,6 +19,8 @@ const HomePage = () => {
       <Link to="/firebase">Firebase</Link>
       <hr />
       <Link to="/cyberpunk">Cyberpunk Theme</Link>
+      <hr />
+      <Link to="/darktheme">Dark Cyberpunk theme</Link>
       <hr />
       <Link to="/test">Test</Link>
     </>)
@@ -34,6 +37,7 @@ function App() {
         <Route path="/firebase" element={<FirebasePage />} />
         <Route path="/font" element={<FontTemplate />} />
         <Route path="/cyberpunk" element={<CyberpunkPage />} />
+        <Route path="/darktheme" element={<DarkThemePage />} />
       </Routes>
     </BrowserRouter>
   );
