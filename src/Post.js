@@ -93,7 +93,7 @@ const Post = () => {
                         <Image src={post.imageURL} />
                         <Segment basic vertical>{post.content}</Segment>
                         <Segment basic vertical>
-                            Comment 0, Like 0
+                            Comment 0, Like {post.likedBy?.length || 0}
                             <Icon name={`thumbs up ${isLiked ? '' : 'outline'}`} color={isLiked ? "blue" : 'grey'} link onClick={toggleLike}></Icon>
                             <Icon name={`bookmark ${isBookmarked ? '' : 'outline'}`} color={isBookmarked ? "yellow" : 'grey'} link onClick={toggleBookmark}></Icon>
                         </Segment>

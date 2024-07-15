@@ -46,7 +46,7 @@ const PostsPage = () => {
                                             <Item.Header>{post.title}</Item.Header>
                                             <Item.Description>{post.content}</Item.Description>
                                             <Item.Extra>
-                                                Comment 0, Like 0
+                                                Comment 0, Like {post.likedBy?.length || 0}
                                             </Item.Extra>
                                         </Item.Content>
                                     </Item>
