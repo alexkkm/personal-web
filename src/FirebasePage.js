@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 // firebase package
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'; // now firebase suugest to import the functions directly form the library, instead of import the object Auth() as oldest version of firebase
-import { collection, getDocs, doc, setDoc, query, where, Timestamp } from "firebase/firestore"
+import { collection, getDocs, doc, setDoc, query, where, Timestamp, deleteDoc } from "firebase/firestore"
 
 // the "auth" is used for the functions from package "firebase/auth"
 import firebaseTools from "./utils/firebase"
@@ -87,43 +87,6 @@ const AuthenticationArea = () => {
     )
 }
 
-// Component of demonstration of firebase uploading functions
-const UploadArea = () => {
-    const [field, setField] = useState("")
-    const [value, setValue] = useState("")
-
-    // name the useNavigate() hook as "navigate"
-    const navigate = useNavigate();
-
-    // submit the post to the firestore
-    const SubmitDocument = () => {
-        // create a collection refernece for the collection "tutorial"
-        const collectionRef = collection(firebaseTools.firestoreDB, "tutorial");
-        // create a document refernece for the document within the collection referred by "collectionRef"
-        const documentRef = doc(collectionRef);
-        // write to the document referred by "documentRef" with the content {title: ...}
-        setDoc(documentRef, {
-            [field]: value,
-            createdAt: Timestamp.now(),
-        }).then(() => {
-            // raise an alert if successfully submit document to collection
-            alert("Already upload the document")
-            // navigate to home page
-            navigate("/")
-        }).catch((err) => { console.log(err) })
-
-    }
-
-    return (
-        <div>
-            <h3>Uploading document</h3>
-            <p>Content to be upload to collection "tutorial":</p>
-            <input value={field} placeholder="field" onChange={(e) => { setField(e.target.value) }} />
-            <input value={value} placeholder="value" onChange={(e) => { setValue(e.target.value) }} />
-            <button onClick={SubmitDocument}>Upload</button>
-        </div>)
-}
-
 // Component of demonstration of firebase fetching functions
 const FetchingArea = () => {
     // parameter that save the fetching result in string
@@ -138,16 +101,19 @@ const FetchingArea = () => {
     useEffect(() => {
 
         // getDocs(): fetch the data from the firestore collection "tutorial"
-        const fetchInList = getDocs(collection(firebaseTools.firestoreDB, "tutorial")).then((collectionSnapShot) => {
-            const fetching = collectionSnapShot.docs.map((doc) => {
-                return {
-                    id: doc.id,
-                    ...doc.data()
-                }
+        const fetchInList = () => {
+            getDocs(collection(firebaseTools.firestoreDB, "tutorial")).then((collectionSnapShot) => {
+                const fetching = collectionSnapShot.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                });
+                console.log(fetching);
+                setList(fetching);
             });
-            console.log(fetching);
-            setList(fetching);
-        });
+        }
+        fetchInList();
 
         // create an async function "fetchFromTutorial"
         const fetchFromTutorial = async () => {
@@ -173,15 +139,33 @@ const FetchingArea = () => {
         fetchFromTutorial();
     }, []);
 
+    // Function for deleting documents with specific id in the collection
+    const deleteDocument = async (documentID) => {
+        try {
+            // create a collection refernece for the collection "tutorial"
+            const collectionRef = collection(firebaseTools.firestoreDB, "tutorial");
+            // create a document refernece for the document within the collection referred by "collectionRef"
+            const documentRef = doc(collectionRef, documentID);
+            await deleteDoc(documentRef);
+            alert("document deleted successfully:");
+        } catch (error) {
+            console.log("Error on deleting: " + error);
+        }
+    };
+
     return (
         <div>
             <h3>Fetching Data</h3>
             <div>
                 <h4>Fetch all documents in collection "tutorial"</h4>
                 {list.map((item, id) => (
-                    <div key={id}>{id}: {JSON.stringify(item)}</div>
+                    <div key={item.id}>
+                        {item.id}: {JSON.stringify(item)}
+                        <button onClick={() => deleteDocument(item.id)}>Delete</button>
+                    </div>
                 ))}
             </div>
+            <br />
             <div>
                 <h4>Documents of "tutorial" collection that exists field: "content"</h4>
                 {Object.keys(result).map((id) => (
@@ -192,15 +176,51 @@ const FetchingArea = () => {
     )
 }
 
+// Component of demonstration of firebase uploading functions
+const UploadArea = () => {
+    const [field, setField] = useState("")
+    const [value, setValue] = useState("")
+
+    // name the useNavigate() hook as "navigate"
+    const navigate = useNavigate();
+
+    // submit the post to the firestore
+    const SubmitDocument = () => {
+        // create a collection refernece for the collection "tutorial"
+        const collectionRef = collection(firebaseTools.firestoreDB, "tutorial");
+        // create a document refernece for the document within the collection referred by "collectionRef"
+        const documentRef = doc(collectionRef);
+        // write to the document referred by "documentRef" with the content {title: ...}
+        setDoc(documentRef, {
+            [field]: value,
+            createdAt: Timestamp.now(),
+        }).then(() => {
+            // raise an alert if successfully submit document to collection
+            alert("Already upload the document")
+            navigate("/firebase")
+        }).catch((err) => { console.log(err) })
+
+    }
+
+    return (
+        <div>
+            <h3>Uploading document</h3>
+            <p>Content to be upload to collection "tutorial":</p>
+            <input value={field} placeholder="field" onChange={(e) => { setField(e.target.value) }} />
+            <input value={value} placeholder="value" onChange={(e) => { setValue(e.target.value) }} />
+            <button onClick={SubmitDocument}>Upload</button>
+        </div>)
+}
+
 // Page of tutorials of firebase functions
 const FirebasePage = () => {
     return (
         <div>
             <AuthenticationArea />
             <hr />
-            <UploadArea />
-            <hr />
             <FetchingArea />
+            <hr />
+            <UploadArea />
             <hr />
         </div>
     );
