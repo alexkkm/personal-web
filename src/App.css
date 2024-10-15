@@ -1,3 +1,29 @@
-*{
-  
+/** Font **/
+
+/* import the font: "Aero Matics Bold" */
+@font-face {
+	font-family: 'Aero Matics Bold';
+	src: url('./fonts/AeroMaticsBold.ttf') format('truetype');
+}
+
+/* import the font: "Rajdhani" with different font weight */
+@font-face {
+	font-family: 'Rajdhani-Bold';
+	src: url('./fonts/Rajdhani-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Rajdhani-Light';
+	src: url('./fonts/Rajdhani-Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Rajdhani-Medium';
+	src: url('./fonts/Rajdhani-Medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Rajdhani-SemiBold';
+	src: url('./fonts/Rajdhani-SemiBold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Rajdhani-Regular';
+	src: url('./fonts/Rajdhani-Regular.ttf') format('truetype');
 }

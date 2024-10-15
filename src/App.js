@@ -5,9 +5,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 // Page of the app
 import SemanticUIPage from './SemanticUIPage';
-import FirebasePage from './FirebasePage';
+import FirebasePage from './components/FirebasePage';
 import Test from './Test';
-import FontTemplate from './font/font';
+import FontTemplate from './fonts/font';
 import CyberpunkPage from './cyberpunk_theme/cyberpunk';
 import DarkThemePage from './cyberpunk_theme/darktheme';
 
