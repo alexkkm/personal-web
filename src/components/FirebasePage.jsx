@@ -388,7 +388,7 @@ const NestedTable = () => {
                                                         onChange={(e) => handleEditChange(currentPath, 'value', e.target.value)}
                                                     />
                                                 )}
-                                                <Button label="刪除" onClick={() => handleDeleteField(currentPath)} />
+                                                <Button className="delete-button" label="刪除" onClick={() => handleDeleteField(currentPath)} />
                                                 <Button label="提交修改" onClick={() => handleEditField(currentPath, editStates[currentPath]?.field, editStates[currentPath]?.value, selectedTypes[currentPath])} />
                                             </div>
                                         )}

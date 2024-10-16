@@ -12,46 +12,48 @@
     line-height: 1.4;
     margin: 0;
     min-height: 100vh;
-  }
-  
-  .messageBoard {
+
+    .messageBoard {
     
-    /* position */
-    left: 10%;
-    top: 100px;
+      /* position */
+      left: 10%;
+      top: 100px;
+      
+      width: 400px;
+    }
     
-    width: 400px;
-  }
+    .border {
+      background-color: rgba(0, 240, 255, 0.05);
+      border: 1px solid #00f0ff;
+      border-radius: 5px;
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 1rem + 2px),
+        calc(100% - 1rem + 2px) 100%,
+        0 100%
+      );
+    }
+    
+    .body {
+      padding: 0.75rem;
+      padding-bottom: 1rem;
+      color:#00f0ff
+    }
+    
+    .border::before {
+      background-color: #00f0ff;
+      bottom: 5px;
+      content: "";
+      display: block;
+      height: 3px; /* bigger to compensate transform */
+      position: absolute;
+      right: -6px;
+      top: auto;
+      transform: rotate(-45deg);
+      width: 22.627416px;
+      z-index: 100;
+    }
+}
   
-  .border {
-    background-color: rgba(0, 240, 255, 0.05);
-    border: 1px solid #00f0ff;
-    border-radius: 5px;
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% calc(100% - 1rem + 2px),
-      calc(100% - 1rem + 2px) 100%,
-      0 100%
-    );
-  }
   
-  .body {
-    padding: 0.75rem;
-    padding-bottom: 1rem;
-    color:#00f0ff
-  }
-  
-  .border::before {
-    background-color: #00f0ff;
-    bottom: 5px;
-    content: "";
-    display: block;
-    height: 3px; /* bigger to compensate transform */
-    position: absolute;
-    right: -6px;
-    top: auto;
-    transform: rotate(-45deg);
-    width: 22.627416px;
-    z-index: 100;
-  }

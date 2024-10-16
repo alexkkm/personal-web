@@ -3,7 +3,7 @@ import "./cyberpunk.css"
 
 const CyberPunkPage = () => {
     return (
-        <div className="content" translate="no" data-new-gr-c-s-check-loaded="14.1009.0" data-gr-ext-installed="">
+        <div className="CyberpunkPageContent" translate="no" data-new-gr-c-s-check-loaded="14.1009.0" data-gr-ext-installed="">
             <div className="app-skeleton">
                 <header className="app-header">
                     <div className="app-header__anchor"><span className="app-header__anchor__text">Night-City NetWire</span></div>

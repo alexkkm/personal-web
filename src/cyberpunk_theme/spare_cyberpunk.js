@@ -2,7 +2,7 @@ import "./spare_cyberpunk.css";
 
 const CyberpunkPage = () => {
     return (
-        <div>
+        <div className="spareCyberpunkPage">
             <header style={{ backgroundColor: '#000', height: '50px' }}>
                 <a href="https://github.com/gwannon/Cyberpunk-2077-theme-css" style={{ color: '#f9f002', fontSize: '2rem' }}>Github</a>
             </header>
