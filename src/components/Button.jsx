@@ -2,8 +2,8 @@ import './Button.css';
 
 const Button = ({ label, onClick }) => {
     return (
-        <div className="Button">
-            <button className="button" onClick={onClick}>
+        <div className="ButtonComponent">
+            <button className="buttonBody" onClick={onClick}>
                 {label}
             </button>
         </div>

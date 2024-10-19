@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from 'react';
 
 // firebase package
-import { getDatabase, ref, set, get, child, update, remove } from "firebase/database";
+import { ref, set, get, child, update, remove } from "firebase/database";
 
-import firebaseTools from "../utils/firebase";
+import firebaseTools from "../assets/firebase";
 
-import firebaseImagePath from "../utils/firebase-Icon.png";
+import firebaseImagePath from "../assets/firebase-Icon.png";
 import Button from './Button';
 import "./FirebasePage.css";
 import Dropdown from './Dropdown';
@@ -301,7 +301,7 @@ const NestedTable = () => {
     // render the table with given object "obj" and path "parentKey"
     const renderTable = (obj, parentKey) => {
         return (
-            <div style={{ marginBottom: '20px' }}>
+            <div className="renderTable" style={{ marginBottom: '20px' }}>
                 <table border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <tbody>
                         {Object.entries(obj).map(([key, value]) => {
@@ -320,7 +320,7 @@ const NestedTable = () => {
                                             <span>{value}</span>
                                         )}
                                         {editStates[currentPath]?.visible && (
-                                            <div>
+                                            <div className='renderTable'>
                                                 <input
                                                     type="text"
                                                     placeholder="修改欄位名稱"
@@ -388,7 +388,7 @@ const NestedTable = () => {
                                                         onChange={(e) => handleEditChange(currentPath, 'value', e.target.value)}
                                                     />
                                                 )}
-                                                <Button className="delete-button" label="刪除" onClick={() => handleDeleteField(currentPath)} />
+                                                <Button label="刪除" onClick={() => handleDeleteField(currentPath)} />
                                                 <Button label="提交修改" onClick={() => handleEditField(currentPath, editStates[currentPath]?.field, editStates[currentPath]?.value, selectedTypes[currentPath])} />
                                             </div>
                                         )}
@@ -404,7 +404,7 @@ const NestedTable = () => {
     };
 
     return (
-        <div>
+        <div className='NestedTable'>
             <h1 style={{ textAlign: 'center', paddingTop: '10px' }}>Firebase Realtime Database</h1>
             {Object.keys(data).length === 0 ? (
                 <p>Loading data...</p>
