@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from './Button.jsx';
-import './App.css';
 
 const App = () => {
   return (
@@ -15,10 +14,23 @@ const App = () => {
           onClick={() => {
             console.log('Hellow');
           }}
+          style={styles.testingButtonStyle}
         />
+        <hr />
+        <Button label="sample" />
       </div>
     </div>
   );
 }
 
 export default App;
+
+const styles = {
+  testingButtonStyle: {
+    backgroundColor: 'yellow',
+    color: "black"
+  }
+}
+
+// This is an example of css in js, we define the style in the jsx, and then import it into the component in style field
+// define const styles for the style of the component in this file, and import the style into the component in style field 
