@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from './Button.jsx';
 
+import styles from './App.module.css';
+
 const App = () => {
   return (
     <div className='App'>
@@ -9,12 +11,11 @@ const App = () => {
 
       <div className='playground'>
         <Button
-          id='testing'
+          className={styles.testingButtonStyle}
           label='Hi'
           onClick={() => {
             console.log('Hellow');
           }}
-          style={styles.testingButtonStyle}
         />
         <hr />
         <Button label="sample" />
@@ -25,12 +26,4 @@ const App = () => {
 
 export default App;
 
-const styles = {
-  testingButtonStyle: {
-    backgroundColor: 'yellow',
-    color: "black"
-  }
-}
-
-// This is an example of css in js, we define the style in the jsx, and then import it into the component in style field
-// define const styles for the style of the component in this file, and import the style into the component in style field 
+// This is an example of modules css

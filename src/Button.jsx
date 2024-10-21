@@ -1,7 +1,9 @@
-const Button = ({ label, onClick, style }) => {
+import styles from "./Button.module.css";
+
+const Button = ({ className, label, onClick }) => {
     return (
         <div className="ButtonComponent">
-            <button className="buttonBody" onClick={onClick} style={style || styles.buttonBodyStyle}>
+            <button className={className ? className : styles.buttonBodyStyle} id="buttonBody" onClick={onClick}>
                 {label}
             </button>
         </div>
@@ -10,13 +12,5 @@ const Button = ({ label, onClick, style }) => {
 
 export default Button;
 
-const styles = {
-    buttonBodyStyle: {
-        color: "white",
-        backgroundColor: "black",
-    },
-}
-
-
-// This is an example of css in js, we define the style in the jsx, and then import it into the component in style field
-// use style || style.buttonStyle to select the style of default and customized style
+// This is an example of modules css
+// Also need to use className={className ? className : styles.buttonBodyStyle} for the cutomized css and default css
