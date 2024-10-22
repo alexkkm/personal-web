@@ -21,7 +21,7 @@
 }
   
 
-/** The below is the alternative way **/
+/** The below is the alternative way, but the div className should be className={{styles.selfDefineStyle}} **/
 /*
   .selfDefineStyle{
     Button{
