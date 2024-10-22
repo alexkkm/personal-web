@@ -1,4 +1,32 @@
-.testingButtonStyle {
-    background-color: yellow;
-    color: black;
+
+.App{
+  /* need to use styles.selfDefineStyle for next line */
+  /*
+  .selfDefineStyle {
+    Button{
+      background-color: red;
+      color: white;
+    }
   }
+    */
+  
+  /* 此处，使用 global 包裹其他子节点的类名。此时，这些类名就不会被处理，在 JSX 中使用时，就可以用字符串形式的类名 */
+   /* 如果不加 :global ，所有类名就必须添加 styles.title 才可以 */
+   :global(.selfDefineStyle){
+      Button{
+        background-color: red;
+        color: white;
+      }
+   }
+}
+  
+
+/** The below is the alternative way **/
+/*
+  .selfDefineStyle{
+    Button{
+      background-color: green;
+      color: white;
+    }
+  }
+*/
