@@ -8,7 +8,7 @@ import firebaseTools from "../assets/firebase";
 
 import firebaseImagePath from "../assets/firebase-Icon.png";
 import Button from './Button';
-import "./FirebasePage.css";
+import styles from "./FirebasePage.module.css";
 import Dropdown from './Dropdown';
 
 // Example of basic operation in firebase realtime database
@@ -388,8 +388,12 @@ const NestedTable = () => {
                                                         onChange={(e) => handleEditChange(currentPath, 'value', e.target.value)}
                                                     />
                                                 )}
-                                                <Button label="刪除" onClick={() => handleDeleteField(currentPath)} />
-                                                <Button label="提交修改" onClick={() => handleEditField(currentPath, editStates[currentPath]?.field, editStates[currentPath]?.value, selectedTypes[currentPath])} />
+                                                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                    <div className="deleteButtonArea">
+                                                        <Button label="刪除" onClick={() => handleDeleteField(currentPath)} />
+                                                    </div>
+                                                    <Button label="提交修改" className="submitButton" onClick={() => handleEditField(currentPath, editStates[currentPath]?.field, editStates[currentPath]?.value, selectedTypes[currentPath])} />
+                                                </div>
                                             </div>
                                         )}
                                     </td>
@@ -399,7 +403,7 @@ const NestedTable = () => {
                         {renderAddFieldRow(parentKey)}
                     </tbody>
                 </table>
-            </div>
+            </div >
         );
     };
 
@@ -433,7 +437,7 @@ const NestedTable = () => {
 // Page for firebase operation
 const FirebasePage = () => {
     return (
-        <div className="firebasePage">
+        <div className={styles.firebasePage}>
             <img src={firebaseImagePath} className="firebaseImage" />
             <p>Trying the real firebase page</p>
             <div className="Table">
