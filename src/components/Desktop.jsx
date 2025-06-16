@@ -2,6 +2,8 @@
 import { Link, useLocation, } from "react-router-dom";
 import { useState } from "react";
 
+import GridLayout from 'react-grid-layout';
+
 import { TfiViewListAlt } from "react-icons/tfi";
 
 import "./Desktop.css"
@@ -29,21 +31,49 @@ const Desktop = () => {
         setIsButtonActive(true);
     };
 
+    // state to save the Layout of the widget
+    const [layout, setLayout] = useState([
+        { i: 'weatherWidget', x: 0, y: 1, w: 1, h: 5 },
+        { i: 'clockWidget', x: 0, y: 5, w: 1, h: 5 },
+        { i: 'todoListWidget', x: 0, y: 10, w: 1, h: 5 },
+      ]);
+    
+      // method to update the layout state when the layout changes
+      const onLayoutChange = (layout) => {
+        setLayout(layout);
+      };
+
     return (
         <div className="desktop">
+            
+            <div className={`mainScreen ${isBlurred ? 'blurred' : ''}`}>
+                <TfiViewListAlt className="settingButton" onClick={switchNavigationBar} />
+
+                <GridLayout
+                    className="layout"
+                    layout={layout}
+                    cols={3}
+                    rowHeight={30}
+                    width={1200}
+                    onLayoutChange={onLayoutChange}
+                >
+
+                    <div key="weatherWidget" className="grid-item">
+                    <WeatherWidget />
+                    </div>
+                    <div key="clockWidget" className="grid-item">
+                    <ClockWidget />
+                    </div>
+                    <div key="todoListWidget" className="grid-item">
+                    <TodoListWidget />
+                    </div>
+                </GridLayout>
+            </div>
             <div className="hiddenArea">
                 <div className={`switchNavigationBarButton ${isBlurred ? '' : 'hidden'}`}>
                     <NavigationBar switchNavigationBar={switchNavigationBar} />
                 </div>
             </div>
-
-            <div className={`mainScreen ${isBlurred ? 'blurred' : ''}`}>
-                <TfiViewListAlt className="settingButton" onClick={switchNavigationBar} />
-                <WeatherWidget />
-                <ClockWidget />
-                <TodoListWidget />
-            </div>
-
         </div>
     );
 };

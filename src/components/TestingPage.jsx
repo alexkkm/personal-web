@@ -26,13 +26,13 @@ const TestingPage = () => {
         width={1200}
         onLayoutChange={onLayoutChange}
       >
-        <div key="a" className="grid-item" style={{ display: 'flex', justifyContent: 'center' }}>
+        <div key="a" className="grid-item">
           <ClockWidget />
         </div>
-        <div key="b" className="grid-item" style={{ display: 'flex', justifyContent: 'center' }}>
+        <div key="b" className="grid-item">
           <WeatherWidget />
         </div>
-        <div key="c" className="grid-item" style={{ display: 'flex', justifyContent: 'center' }}>
+        <div key="c" className="grid-item">
           <TodoListWidget />
         </div>
       </GridLayout>
