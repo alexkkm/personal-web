@@ -1,38 +1,29 @@
-.App {
-  text-align: center;
+/** Font **/
+
+/* import the font: "Aero Matics Bold" */
+@font-face {
+	font-family: 'Aero Matics Bold';
+	src: url('./fonts/AeroMaticsBold.ttf') format('truetype');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* import the font: "Rajdhani" with different font weight */
+@font-face {
+	font-family: 'Rajdhani-Bold';
+	src: url('./fonts/Rajdhani-Bold.ttf') format('truetype');
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+	font-family: 'Rajdhani-Light';
+	src: url('./fonts/Rajdhani-Light.ttf') format('truetype');
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+	font-family: 'Rajdhani-Medium';
+	src: url('./fonts/Rajdhani-Medium.ttf') format('truetype');
 }
-
-.App-link {
-  color: #61dafb;
+@font-face {
+	font-family: 'Rajdhani-SemiBold';
+	src: url('./fonts/Rajdhani-SemiBold.ttf') format('truetype');
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+	font-family: 'Rajdhani-Regular';
+	src: url('./fonts/Rajdhani-Regular.ttf') format('truetype');
 }

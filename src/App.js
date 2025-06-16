@@ -1,21 +1,43 @@
 import './App.css';
-import Header from './Header';
-import NewPostPage from './NewPost';
-import PostsPage from './Posts';
-import SigninPage from './SigninPage';
-import Post from './Post';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Basic tools 
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+// Page of the app
+import SemanticUIPage from './SemanticUIPage';
+import FirebasePage from './components/FirebasePage';
+import Test from './Test';
+import FontTemplate from './fonts/font';
+import CyberpunkPage from './cyberpunk_theme/cyberpunk';
+import DarkThemePage from './cyberpunk_theme/darktheme';
+
+const HomePage = () => {
+  return (
+    <>
+      <Link to="/semantic-ui">Semantic-UI</Link>
+      <hr />
+      <Link to="/firebase">Firebase</Link>
+      <hr />
+      <Link to="/cyberpunk">Cyberpunk Theme</Link>
+      <hr />
+      <Link to="/darktheme">Dark Cyberpunk theme</Link>
+      <hr />
+      <Link to="/test">Test</Link>
+    </>)
+}
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<PostsPage />}>Home Page</Route>
-        <Route path="/home" element={<PostsPage />}>Home Page</Route>
-        <Route path="/signin" element={<SigninPage />} />
-        <Route path="/new-post" element={<NewPostPage />} />
-        <Route path="/posts/:postId" element={<Post />} exact></Route>
+        <Route path="/" element={<HomePage />}>Home Page</Route>
+        <Route path="/home" element={<HomePage />}>Home Page</Route>
+        <Route path="/test" element={<Test />} />
+        <Route path="/semantic-ui" element={<SemanticUIPage />} />
+        <Route path="/firebase" element={<FirebasePage />} />
+        <Route path="/font" element={<FontTemplate />} />
+        <Route path="/cyberpunk" element={<CyberpunkPage />} />
+        <Route path="/darktheme" element={<DarkThemePage />} />
       </Routes>
     </BrowserRouter>
   );
