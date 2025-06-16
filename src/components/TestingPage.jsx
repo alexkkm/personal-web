@@ -1,13 +1,43 @@
-
-import "./Testing.css";
+import React, { useState } from 'react';
+import GridLayout from 'react-grid-layout';
+import './TestingPage.css';
+import ClockWidget from '../desktopWidget/Clock';
+import WeatherWidget from '../desktopWidget/Weather';
+import TodoListWidget from '../desktopWidget/TodoListWidget';
 
 const TestingPage = () => {
-	return (
-		<div className="testingPage">
-			<p>Testing Page</p>
+  const [layout, setLayout] = useState([
+    { i: 'a', x: 0, y: 0, w: 3, h: 5 },
+    { i: 'b', x: 0, y: 1, w: 3, h: 3 },
+    { i: 'c', x: 3, y: 1, w: 1, h: 5 },
+  ]);
 
-		</div>
-	);
+  const onLayoutChange = (layout) => {
+    setLayout(layout);
+  };
+
+  return (
+    <div className="testingPage">
+      <GridLayout
+        className="layout"
+        layout={layout}
+        cols={12}
+        rowHeight={30}
+        width={1200}
+        onLayoutChange={onLayoutChange}
+      >
+        <div key="a" className="grid-item" style={{ display: 'flex', justifyContent: 'center' }}>
+          <ClockWidget />
+        </div>
+        <div key="b" className="grid-item" style={{ display: 'flex', justifyContent: 'center' }}>
+          <WeatherWidget />
+        </div>
+        <div key="c" className="grid-item" style={{ display: 'flex', justifyContent: 'center' }}>
+          <TodoListWidget />
+        </div>
+      </GridLayout>
+    </div>
+  );
 };
 
 export default TestingPage;

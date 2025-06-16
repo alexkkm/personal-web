@@ -1,0 +1,19 @@
+.testingPage {
+  background-color: #000000;
+}
+
+.layout-container {
+  background-color: #000;
+}
+
+.grid-item {
+  background-color: #000000;
+  border: 1px solid #00f0ff;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+}
+
+.grid-item:hover {
+  background-color: #38a0f5;
+}

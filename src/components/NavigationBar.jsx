@@ -36,6 +36,12 @@ const NavigationBar = ({ switchNavigationBar }) => {
                 title="tutorial"
                 onClick={() => navigate("/tutorial")}
             />
+            <NavigationBarWidget
+                className="testing"
+                icon={<FaBook style={{ color: '#00f0ff' }} />}
+                title="testing"
+                onClick={() => navigate("/testing")}
+            />
         </div>
     );
 };
