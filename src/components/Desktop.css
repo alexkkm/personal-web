@@ -69,5 +69,5 @@
 }
 
 .grid-item:hover {
-  background-color: #00f0f0;
+  background-color: rgba(0, 240, 255, 0.1);
 }

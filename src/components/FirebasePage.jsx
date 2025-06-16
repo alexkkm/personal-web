@@ -434,8 +434,6 @@ const NestedTable = () => {
 const FirebasePage = () => {
     return (
         <div className="firebasePage">
-            <img src={firebaseImagePath} className="firebaseImage" />
-            <p>Trying the real firebase page</p>
             <div className="Table">
                 <NestedTable />
             </div>

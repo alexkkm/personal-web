@@ -1,43 +1,33 @@
 import React, { useState } from 'react';
-import GridLayout from 'react-grid-layout';
-import './TestingPage.css';
-import ClockWidget from '../desktopWidget/Clock';
-import WeatherWidget from '../desktopWidget/Weather';
-import TodoListWidget from '../desktopWidget/TodoListWidget';
+import JsonNestedTable from './NestedJSONTable';
 
 const TestingPage = () => {
-  const [layout, setLayout] = useState([
-    { i: 'a', x: 0, y: 0, w: 3, h: 5 },
-    { i: 'b', x: 0, y: 1, w: 3, h: 3 },
-    { i: 'c', x: 3, y: 1, w: 1, h: 5 },
-  ]);
+  const data={
+    "test1": {"newField": "data1", "nestedField": {"subField1": "value1", "subField2": "value2"}},
+    "test2": "test2",
+    "test3": "test3",
+    "test4": "test4",
+    "test5": "test5",
+    "test6": "test6",
+    "test7": "test7",
+    "test8": "test8",
+    "test9": "test9",
+    "test10": "test10",
+    "test11": "test11",
+    "test12": "test12",
+    "test13": "test13",
+    "test14": "test14",
+    "test15": "test15",
+    "test16": "test16",
+    "test17": "test17",
+    "test18": "test18",
+    "test19": "test19",}
 
-  const onLayoutChange = (layout) => {
-    setLayout(layout);
-  };
-
-  return (
-    <div className="testingPage">
-      <GridLayout
-        className="layout"
-        layout={layout}
-        cols={12}
-        rowHeight={30}
-        width={1200}
-        onLayoutChange={onLayoutChange}
-      >
-        <div key="a" className="grid-item">
-          <ClockWidget />
-        </div>
-        <div key="b" className="grid-item">
-          <WeatherWidget />
-        </div>
-        <div key="c" className="grid-item">
-          <TodoListWidget />
-        </div>
-      </GridLayout>
+  return(
+    <div style={{backgroundColor: "black"}}>
+      <JsonNestedTable data={data} tableTitle={"Tesing Title"} />
     </div>
-  );
-};
+  )
+}
 
 export default TestingPage;
