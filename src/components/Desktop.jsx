@@ -7,9 +7,9 @@ import { TfiViewListAlt } from "react-icons/tfi";
 import "./Desktop.css"
 // Components
 import NavigationBar from "./NavigationBar";
-import WeatherWidget from ".//Weather";
-import ClockWidget from "./Clock";
-import TodoListWidget from "./TodoListWidget";
+import WeatherWidget from "../desktopWidget//Weather";
+import ClockWidget from "../desktopWidget/Clock";
+import TodoListWidget from "../desktopWidget/TodoListWidget";
 
 // indicate the current pathname and display it
 const PathNameIndicator = () => {
