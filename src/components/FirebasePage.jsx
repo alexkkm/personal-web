@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 
 // firebase package
-import { ref, set, get, child, update, remove } from "firebase/database";
+import { getDatabase, ref, set, get, child, update, remove } from "firebase/database";
 
 import firebaseTools from "../assets/firebase";
 
 import firebaseImagePath from "../assets/firebase-Icon.png";
-import Button from '../components/Button';
-import styles from "./FirebasePage.module.css";
-import Dropdown from '../components/Dropdown';
+import Button from './Button';
+import "./FirebasePage.css";
+import Dropdown from './Dropdown';
 
 // Example of basic operation in firebase realtime database
 const BasicOperation = () => {
@@ -301,7 +301,7 @@ const NestedTable = () => {
     // render the table with given object "obj" and path "parentKey"
     const renderTable = (obj, parentKey) => {
         return (
-            <div className="renderTable" style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: '20px' }}>
                 <table border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <tbody>
                         {Object.entries(obj).map(([key, value]) => {
@@ -320,7 +320,7 @@ const NestedTable = () => {
                                             <span>{value}</span>
                                         )}
                                         {editStates[currentPath]?.visible && (
-                                            <div className='renderTable'>
+                                            <div>
                                                 <input
                                                     type="text"
                                                     placeholder="修改欄位名稱"
@@ -388,12 +388,8 @@ const NestedTable = () => {
                                                         onChange={(e) => handleEditChange(currentPath, 'value', e.target.value)}
                                                     />
                                                 )}
-                                                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                    <div className="deleteButtonArea">
-                                                        <Button label="刪除" onClick={() => handleDeleteField(currentPath)} />
-                                                    </div>
-                                                    <Button label="提交修改" className="submitButton" onClick={() => handleEditField(currentPath, editStates[currentPath]?.field, editStates[currentPath]?.value, selectedTypes[currentPath])} />
-                                                </div>
+                                                <Button label="刪除" onClick={() => handleDeleteField(currentPath)} />
+                                                <Button label="提交修改" onClick={() => handleEditField(currentPath, editStates[currentPath]?.field, editStates[currentPath]?.value, selectedTypes[currentPath])} />
                                             </div>
                                         )}
                                     </td>
@@ -403,12 +399,12 @@ const NestedTable = () => {
                         {renderAddFieldRow(parentKey)}
                     </tbody>
                 </table>
-            </div >
+            </div>
         );
     };
 
     return (
-        <div className='NestedTable'>
+        <div>
             <h1 style={{ textAlign: 'center', paddingTop: '10px' }}>Firebase Realtime Database</h1>
             {Object.keys(data).length === 0 ? (
                 <p>Loading data...</p>
@@ -437,7 +433,7 @@ const NestedTable = () => {
 // Page for firebase operation
 const FirebasePage = () => {
     return (
-        <div className={styles.firebasePage}>
+        <div className="firebasePage">
             <img src={firebaseImagePath} className="firebaseImage" />
             <p>Trying the real firebase page</p>
             <div className="Table">
