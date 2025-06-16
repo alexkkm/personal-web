@@ -7,9 +7,9 @@ import { ref, set, get, child, update, remove } from "firebase/database";
 import firebaseTools from "../assets/firebase";
 
 import firebaseImagePath from "../assets/firebase-Icon.png";
-import Button from './Button';
+import Button from '../components/Button';
 import styles from "./FirebasePage.module.css";
-import Dropdown from './Dropdown';
+import Dropdown from '../components/Dropdown';
 
 // Example of basic operation in firebase realtime database
 const BasicOperation = () => {
