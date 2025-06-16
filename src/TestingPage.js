@@ -1,9 +1,9 @@
 import "./test.css"
 
-const Test = () => {
+const TestingPage = () => {
     return (
         <p>Test Page</p>
     )
 }
 
-export default Test;
+export default TestingPage;

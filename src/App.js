@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 // Page of the app
 import SemanticUIPage from './SemanticUIPage';
 import FirebasePage from './components/FirebasePage';
-import Test from './Test';
+import TestingPage from './TestingPage';
 import FontTemplate from './fonts/font';
 import CyberpunkPage from './cyberpunk_theme/cyberpunk';
 import DarkThemePage from './cyberpunk_theme/darktheme';
@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}>Home Page</Route>
         <Route path="/home" element={<HomePage />}>Home Page</Route>
-        <Route path="/test" element={<Test />} />
+        <Route path="/test" element={<TestingPage/>} />
         <Route path="/semantic-ui" element={<SemanticUIPage />} />
         <Route path="/firebase" element={<FirebasePage />} />
         <Route path="/font" element={<FontTemplate />} />
