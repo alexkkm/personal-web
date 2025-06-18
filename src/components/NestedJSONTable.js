@@ -11,10 +11,10 @@ const renderCellContent = (value) => {
   return <span>{value}</span>;
 };
 
-const NewNestedJSONTable = ({ data, tableTitle }) => {
+const NestedJSONTable = ({ data, tableTitle }) => {
   const renderTable = (obj, parentKey) => {
     return (
-      <div className="NewNestedJSONTable" style={{ marginBottom: '20px' }}>
+      <div className="NestedJSONTable" style={{ marginBottom: '20px' }}>
         <table className="table" border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
           <tbody>
             {Object.entries(obj).map(([key, value]) => {
@@ -33,11 +33,65 @@ const NewNestedJSONTable = ({ data, tableTitle }) => {
   };
 
   return (
-    <div className="NewNestedJSONTable">
+    <div className="NestedJSONTable">
       <h1 style={{ textAlign: 'center', paddingTop: '10px' }}>{tableTitle}</h1>
       {renderTable(data, '')}
     </div>
   );
 };
 
-export default NewNestedJSONTable;
+export default NestedJSONTable;
+
+/** 
+ * Below is an example of how to use the NewNestedJSONTable component
+ * 
+import { Link } from 'react-router-dom'; // Import Link
+import NewNestedJSONTable from './NewNestedJSONTable';
+import ClockWidget from './ClockWidget'; // Import the ClockWidget
+
+  const Page = () => {
+  const nestedTable = {
+    item1: "Value 1",
+    item2: {
+      type: 'button',
+      props: {
+        onClick: () => alert('Button Clicked!'),
+        children: "Click Me!"
+      }
+    },
+    item3: {
+      type: 'img',
+      props: {
+        src: 'https://via.placeholder.com/150',
+        alt: 'Placeholder Image'
+      }
+    },
+    item4: {
+      type: ClockWidget, // Use ClockWidget directly
+      props: {} // Pass any required props here
+    },
+    item5: {
+      type: Link, // Use Link component
+      props: {
+        to: "/",
+        children: "Home" // Link text
+      }
+    },
+    item6: {
+      type: 'p', // Use a paragraph tag
+      props: {
+        children: "Network" // Paragraph text
+      }
+    }
+  };
+
+  return (
+    <div style={{backgroundColor: "black"}}>
+    <NestedJSONTable data={nestedTable} tableTitle="Dynamic Nested JSON Table" />
+    </div>
+  );
+  }
+ * 
+ * 
+ * 
+ * **/
