@@ -1,28 +1,26 @@
+// JsonNestedTable.js
 import React from 'react';
-import './NestedJSONTable.css';
+import './OldNestedJSONTable.css';
 
-const renderCellContent = (value) => {
-  if (typeof value === 'object' && value !== null) {
-    // If the value is an object, expect it to be a component definition
-    const { type, props } = value;
-    const Component = type; // Assuming 'type' is a valid React component
-    return <Component {...props} />;
-  }
-  return <span>{value}</span>;
-};
-
-const NewNestedJSONTable = ({ data, tableTitle }) => {
+const JsonNestedTable = ({ data,tableTitle }) => {
   const renderTable = (obj, parentKey) => {
     return (
-      <div className="NewNestedJSONTable" style={{ marginBottom: '20px' }}>
+      <div className="NestedJSONTable" style={{ marginBottom: '20px' }}>
         <table className="table" border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
           <tbody>
             {Object.entries(obj).map(([key, value]) => {
               const currentPath = `${parentKey}/${key}`;
+
               return (
                 <tr key={key}>
                   <td>{key}</td>
-                  <td>{renderCellContent(value)}</td>
+                  <td>
+                    {typeof value === 'object' && value !== null ? (
+                      renderTable(value, currentPath)
+                    ) : (
+                      <span>{value}</span>
+                    )}
+                  </td>
                 </tr>
               );
             })}
@@ -33,11 +31,11 @@ const NewNestedJSONTable = ({ data, tableTitle }) => {
   };
 
   return (
-    <div className="NewNestedJSONTable">
+    <div className="NestedJSONTable">
       <h1 style={{ textAlign: 'center', paddingTop: '10px' }}>{tableTitle}</h1>
       {renderTable(data, '')}
     </div>
   );
 };
 
-export default NewNestedJSONTable;
+export default JsonNestedTable;

@@ -1,33 +1,31 @@
 import React, { useState } from 'react';
-import JsonNestedTable from './NestedJSONTable';
+import NestedJSONTable from './NestedJSONTable';
+
 
 const TestingPage = () => {
-  const data={
-    "test1": {"newField": "data1", "nestedField": {"subField1": "value1", "subField2": "value2"}},
-    "test2": "test2",
-    "test3": "test3",
-    "test4": "test4",
-    "test5": "test5",
-    "test6": "test6",
-    "test7": "test7",
-    "test8": "test8",
-    "test9": "test9",
-    "test10": "test10",
-    "test11": "test11",
-    "test12": "test12",
-    "test13": "test13",
-    "test14": "test14",
-    "test15": "test15",
-    "test16": "test16",
-    "test17": "test17",
-    "test18": "test18",
-    "test19": "test19",}
+  const data = {
+    item1: "Value 1",
+    item2: {
+      type: 'button',
+      props: {
+        onClick: () => alert('Button Clicked!'),
+        children: "Click Me!"
+      }
+    },
+    item3: {
+      type: 'img',
+      props: {
+        src: 'https://via.placeholder.com/150',
+        alt: 'Placeholder Image'
+      }
+    }
+  };
 
-  return(
+  return (
     <div style={{backgroundColor: "black"}}>
-      <JsonNestedTable data={data} tableTitle={"Tesing Title"} />
+    <NestedJSONTable data={data} tableTitle="Dynamic Nested JSON Table" />
     </div>
-  )
+  );
 }
 
 export default TestingPage;
