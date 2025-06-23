@@ -1,0 +1,93 @@
+/* Calendar.css */
+
+.Calendar {
+  padding: 20px;
+  background-color: rgba(0, 240, 255, 0.05);
+  border-radius: 5px;
+  color: #00f0ff;
+  border: 2px solid #00f0ff; /* Add border with specified color and width */
+  position: relative;
+}
+
+.month-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekday {
+  font-weight: bold;
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.calendar-day {
+  padding: 20px;
+  background-color: rgba(0, 240, 255, 0.1);
+  border: 1px solid #00f0ff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.calendar-day:hover {
+  background-color: rgba(0, 240, 255, 0.2);
+}
+
+.calendar-day.empty {
+  background-color: transparent; /* Hide empty cells */
+}
+
+.event-preview {
+  position: fixed; /* Position the modal */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid #00f0ff; /* Add border with specified color */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.event-preview-background {
+  position: absolute; /* Position it within the modal */
+  top: 0;
+  left: 0;
+  width: 100%; /* Match the width of the modal */
+  height: 100%; /* Match the height of the modal */
+  background-color: black; /* Solid black background */
+  z-index: -1; /* Place it behind the content */
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Optional overlay */
+  z-index: 999; /* Ensure it is below the modal */
+}
+
+.blurred {
+  filter: blur(5px); /* Blur effect for background */
+}
+
+.event-preview input {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #00f0ff;
+  border-radius: 5px;
+}

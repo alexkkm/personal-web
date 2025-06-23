@@ -37,15 +37,15 @@
 /* Pseudo-element for additional styling */
 .Dropdown::before {
     background-color: #00f0ff;
-    bottom: 3px; /* adjust this value to position the pseudo-element at the bottom of the dropdown */
+    bottom: 4px; /* adjust this value to position the pseudo-element at the bottom of the dropdown */
     content: "";
     display: block;
-    height: 3px;
+    height: 2px;
     position: absolute;
-    right: -1px; /* adjust this value to position the pseudo-element at the right edge of the dropdown */
+    right: -2px; /* adjust this value to position the pseudo-element at the right edge of the dropdown */
     top: auto;
     transform: rotate(-45deg);
-    width: 12px; /* adjust this value to match the width of the dropdown */
+    width: 14.4px; /* adjust this value to match the width of the dropdown */
     z-index: 100;
   }
 
