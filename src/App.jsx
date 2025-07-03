@@ -7,11 +7,11 @@ import "./App.css";
 // Pages
 import Desktop from "./components/Desktop";
 import DarkThemePage from "./components/darktheme";
-import TestingPage from "./components/TestingPage";
-import NetworkPage from "./components/Network";
+import TestingPage from "./pages/TestingPage";
+import NetworkPage from "./pages/Network";
 import LocalStorageTutorial from "./tutorial/LocalStorage";
-import FirebasePage from "./components/FirebasePage";
-import TutorialPage from "./components/TutorialPage";
+import FirebasePage from "./pages/FirebasePage";
+import TutorialPage from "./pages/TutorialPage";
 
 // The main componenet of the app
 function App() {

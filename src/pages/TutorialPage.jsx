@@ -1,8 +1,8 @@
 import "./TutorialPage.css"
 
-import Table from "./Table"
-import MessageBoard from "./MessageBoard"
-import Button from "./Button"
+import Table from "../components/Table"
+import MessageBoard from "../components/MessageBoard"
+import Button from "../components/Button"
 
 const TutorialPage = () => {
 

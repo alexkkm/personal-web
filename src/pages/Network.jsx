@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import "./Network.css";
-import NewNestedJSONTable from "./NestedJSONTable";
+import NewNestedJSONTable from "../components/NestedJSONTable";
 
 const NetworkPage = () => {
     const nestedTable = {

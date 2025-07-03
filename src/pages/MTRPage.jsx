@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import trainData from './MTR.json'; // Import the JSON data
-import Dropdown from './Dropdown'; // Import the Dropdown component
-import Button from "./Button";
-import NestedJSONTable from './NestedJSONTable'; // Import the NestedJSONTable component
+import Dropdown from '../components/Dropdown'; // Import the Dropdown component
+import Button from "../components/Button";
+import NestedJSONTable from '../components/NestedJSONTable'; // Import the NestedJSONTable component
 import './MTR.css'; // Import the MTR.css file for styling
 
 const MTRPage = () => {

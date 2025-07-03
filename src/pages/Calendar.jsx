@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Calendar.css';
-import Button from './Button';
-import Dropdown from './Dropdown';
+import Button from '../components/Button';
+import Dropdown from '../components/Dropdown';
 
 const Calendar = () => {
   const today = new Date();
