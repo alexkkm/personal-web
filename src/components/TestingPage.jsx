@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import NestedJSONTable from './NestedJSONTable';
-import Calendar from './Calendar';
-
+import MTRPage from './MTRPage';
 
 const TestingPage = () => {
-  
   return (
-    <div style={{backgroundColor: "black"}}>
-    <Calendar />
+    <div style={{ backgroundColor: 'black' }}>
+      <MTRPage />
     </div>
   );
-}
+};
 
 export default TestingPage;

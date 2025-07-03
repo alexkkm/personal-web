@@ -1,0 +1,58 @@
+/* MTR.css */
+
+.mtr-page {
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #00191d;
+  color: #00f0ff;
+  text-align: center;
+}
+
+.mtr-page h1 {
+  color: #00f0ff;
+}
+
+.dropdown-container {
+  margin-bottom: 20px;
+}
+
+.dropdown-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #00f0ff;
+}
+
+.train-info-container {
+  margin-top: 20px;
+}
+
+/* Basic table styles - can be expanded to match NestedJSONTable.css */
+.train-info-container table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #00f0ff;
+  background-color: rgba(0, 240, 255, 0.05);
+}
+
+.train-info-container th,
+.train-info-container td {
+  border: 1px solid #00f0ff;
+  padding: 8px;
+  text-align: left;
+}
+
+.train-info-container th {
+  background-color: rgba(0, 240, 255, 0.1);
+  color: #00f0ff;
+}
+
+/* Style the link */
+.train-info-container a {
+  color: #00f0ff;
+  text-decoration: none;
+}
+
+.train-info-container a:hover {
+  text-decoration: underline;
+}
