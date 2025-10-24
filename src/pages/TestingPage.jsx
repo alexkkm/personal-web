@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import MTRPage from './MTRPage';
+import TOTPGenerator from './TOTPGenerator';
 
 const TestingPage = () => {
   return (
     <div style={{ backgroundColor: 'black' }}>
-      <MTRPage />
+      <TOTPGenerator />
     </div>
   );
 };
