@@ -1,21 +1,5 @@
-function totp(secret, timeStep = 30, digits = 6) {
-    const time = Math.floor(Date.now() / 1000 / timeStep); // Current time step
-    const timeHex = time.toString(16).padStart(16, '0'); // Convert to hex and pad
-    const timeBytes = hexToBytes(timeHex).reverse(); // Convert hex to bytes (big-endian)
-  
-    const hmac = hmacSha1(base32Decode(secret), String.fromCharCode(...timeBytes)); // HMAC calculation
-  
-    const offset = hmac.charCodeAt(hmac.length - 1) & 0x0f; // Dynamic truncation
-    const binaryCode =
-      ((hmac.charCodeAt(offset) & 0x7f) << 24) |
-      ((hmac.charCodeAt(offset + 1) & 0xff) << 16) |
-      ((hmac.charCodeAt(offset + 2) & 0xff) << 8) |
-      (hmac.charCodeAt(offset + 3) & 0xff);
-  
-    const otp = binaryCode % Math.pow(10, digits); // OTP value
-    return otp.toString().padStart(digits, '0'); // Format to specified digits
-}
-  
+// TOTP Calculation Module
+
 function hexToBytes(hex) {
     let bytes = [];
     for (let i = 0; i < hex.length; i += 2) {
@@ -262,6 +246,25 @@ function xor(a, b) {
       result += String.fromCharCode(a.charCodeAt(i) ^ b.charCodeAt(i));
     }
     return result;
+}
+
+// Output function
+function totp(secret, timeStep = 30, digits = 6) {
+    const time = Math.floor(Date.now() / 1000 / timeStep); // Current time step
+    const timeHex = time.toString(16).padStart(16, '0'); // Convert to hex and pad
+    const timeBytes = hexToBytes(timeHex).reverse(); // Convert hex to bytes (big-endian)
+  
+    const hmac = hmacSha1(base32Decode(secret), String.fromCharCode(...timeBytes)); // HMAC calculation
+  
+    const offset = hmac.charCodeAt(hmac.length - 1) & 0x0f; // Dynamic truncation
+    const binaryCode =
+      ((hmac.charCodeAt(offset) & 0x7f) << 24) |
+      ((hmac.charCodeAt(offset + 1) & 0xff) << 16) |
+      ((hmac.charCodeAt(offset + 2) & 0xff) << 8) |
+      (hmac.charCodeAt(offset + 3) & 0xff);
+  
+    const otp = binaryCode % Math.pow(10, digits); // OTP value
+    return otp.toString().padStart(digits, '0'); // Format to specified digits
 }
 
 export default totp;

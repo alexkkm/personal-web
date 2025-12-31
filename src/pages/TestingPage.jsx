@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import TOTPGenerator from './TOTPGenerator';
+import TOTPWidget from '../desktopWidget/TOTPWidget';
 
 const TestingPage = () => {
   return (
     <div style={{ backgroundColor: 'black' }}>
-      <TOTPGenerator />
+      <TOTPWidget />
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import totp from './TOTPCalculation';
+import './TOTPWidget.css';
 
-const TOTPGenerator=()=>{
+const TOTPWidget=()=>{
     const secret = 'AKMKONG';
     const [otp, setOtp] = useState('');
     const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
@@ -16,12 +17,12 @@ const TOTPGenerator=()=>{
         }, [secret, totp]);
 
     return (
-        <div>
-        <p style={{color: "#fff"}}>Secret: {secret}</p>
-        <p style={{color: "#fff"}}>TOTP: {otp}</p>
-        <p style={{color: "#fff"}}>Current Time: {currentTime}</p>
+        <div className='TOTPWidget'>
+        <p style={{color: "#00f0ff"}}>Secret: {secret}</p>
+        <p style={{color: "#00f0ff"}}>TOTP: {otp}</p>
+        <p style={{color: "#00f0ff"}}>Current Time: {currentTime}</p>
         </div>
     );
 }
 
-export default TOTPGenerator;
+export default TOTPWidget;

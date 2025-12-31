@@ -12,6 +12,7 @@ import NavigationBar from "./NavigationBar";
 import WeatherWidget from "../desktopWidget//Weather";
 import ClockWidget from "../desktopWidget/Clock";
 import TodoListWidget from "../desktopWidget/TodoListWidget";
+import TOTPWidget from "../desktopWidget/TOTPWidget";
 
 // indicate the current pathname and display it
 const PathNameIndicator = () => {
@@ -35,7 +36,8 @@ const Desktop = () => {
     const [layout, setLayout] = useState([
         { i: 'weatherWidget', x: 0, y: 1, w: 1, h: 5 },
         { i: 'clockWidget', x: 0, y: 5, w: 1, h: 5 },
-        { i: 'todoListWidget', x: 0, y: 10, w: 1, h: 5 },
+        { i: 'todoListWidget', x: 1, y: 1, w: 1, h: 5 },
+        { i: 'totpWidget', x: 1, y: 5, w: 1, h: 5 },
       ]);
     
       // method to update the layout state when the layout changes
@@ -66,6 +68,9 @@ const Desktop = () => {
                     </div>
                     <div key="todoListWidget" className="grid-item">
                     <TodoListWidget />
+                    </div>
+                    <div key="totpWidget" className="grid-item">
+                    <TOTPWidget />
                     </div>
                 </GridLayout>
             </div>
