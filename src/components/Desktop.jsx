@@ -9,8 +9,8 @@ import { TfiViewListAlt } from "react-icons/tfi";
 import "./Desktop.css"
 // Components
 import NavigationBar from "./NavigationBar";
-import WeatherWidget from "../desktopWidget//Weather";
-import ClockWidget from "../desktopWidget/Clock";
+import WeatherWidget from "../desktopWidget/WeatherWidget";
+import ClockWidget from "../desktopWidget/ClockWidget";
 import TodoListWidget from "../desktopWidget/TodoListWidget";
 import TOTPWidget from "../desktopWidget/TOTPWidget";
 

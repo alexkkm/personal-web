@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./Clock.css";
+import "./ClockWidget.css";
 
 // Widget of displaying time
 const ClockWidget = (parameters) => {

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { WiDaySunny, WiNightClear, WiRain, WiNightRain, } from "react-icons/wi";
 
-import "./Weather.css";
+import "./WeatherWidget.css";
 
 /*
 // Simple fetch method
