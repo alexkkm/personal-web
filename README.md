@@ -10,3 +10,8 @@ The app is a single-page application with React.
 ## TODO:
 - Trying to rename all the div className so that there is no conflicts for css
 - Doing the same measure on react-electron project
+
+
+## Tips of using browser within Vscode
+ctrl+shift+P type simple browser
+type http://localhost:3000
