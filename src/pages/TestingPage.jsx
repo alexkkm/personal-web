@@ -3,8 +3,15 @@ import Table from '../components/Table';
 
 const TestingPage = () => {
   return (
-    <div style={{ backgroundColor: 'black' }}>
-      <Table twoDimensionArrayOfElements={{a: {b: 1, c: 2}, d: {e: 3, f: 4}, g: {h: 5, i: 6}}}/>
+    <div style={{ backgroundColor: 'black', color: '#00f0ff' }}>
+      <Table
+        twoDimensionArrayOfElements={[
+          [<p>test</p>, <p>d</p>],
+          [<a>link</a>, <p>3</p>],
+        ]}
+        RowTitleArray={["Row 1", "Row 2"]}
+        ColumnTitleArray={["Column 1", "Column 2"]}
+      />
     </div>
   );
 };
