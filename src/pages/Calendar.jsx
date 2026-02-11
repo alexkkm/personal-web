@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Calendar.css';
+import styles from './Calendar.module.css';
 import Button from '../components/Button';
 import Dropdown from '../components/Dropdown';
 
@@ -86,10 +86,10 @@ const Calendar = () => {
   );
 
   return (
-    <div className='Calendar'>
+    <div className={styles.Calendar}>
       <div className={isModalOpen ? 'blurred' : ''}>
         <h1>Calendar</h1>
-        <div className='month-selector'>
+        <div className={styles.monthSelector}>
           <Dropdown
             options={months}
             onChange={handleMonthChange}
@@ -101,21 +101,21 @@ const Calendar = () => {
             defaultValue={selectedDate.getFullYear()}
           />
         </div>
-        <div className='weekdays'>
+        <div className={styles.weekdays}>
           {weekdays.map(day => (
-            <div key={day} className='weekday'>
+            <div key={day} className={styles.weekday}>
               {day}
             </div>
           ))}
         </div>
-        <div className='calendar-grid'>
+        <div className={styles.calendarGrid}>
           {Array.from({ length: firstDayOfMonth }).map((_, index) => (
-            <div key={`empty-${index}`} className='calendar-day empty'></div>
+            <div key={`empty-${index}`} className={styles.calendarDayEmpty}></div>
           ))}
           {Array.from({ length: daysInMonth }, (_, index) => (
             <div
               key={index + 1}
-              className='calendar-day'
+              className={styles.calendarDay}
               onClick={() => handleDayClick(index + 1)}
             >
               {index + 1}
@@ -126,10 +126,10 @@ const Calendar = () => {
 
       {isModalOpen && (
         <>
-          <div className='modal-background'></div>
+          <div className={styles.modalBackground}></div>
           {/* Optional: If you want an overlay */}
-          <div className='event-preview'>
-            <div className='event-preview-background'></div>
+          <div className={styles.eventPreview}>
+            <div className={styles.eventPreviewBackground}></div>
             {/* Black background layer */}
             <Button label='Close' onClick={handleCloseModal} />
             <h2>Events for {selectedDate.toDateString()}</h2>

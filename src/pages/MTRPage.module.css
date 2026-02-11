@@ -1,6 +1,6 @@
 /* MTR.css */
 
-.mtr-page {
+.mtrPage {
   font-family: sans-serif;
   padding: 20px;
   background-color: #00191d;
@@ -8,26 +8,26 @@
   text-align: center;
 }
 
-.mtr-page h1 {
+.mtrPage h1 {
   color: #00f0ff;
 }
 
-.dropdown-container {
+.dropdownContainer {
   margin-bottom: 20px;
 }
 
-.dropdown-container label {
+.dropdownContainer label {
   display: block;
   margin-bottom: 5px;
   color: #00f0ff;
 }
 
-.train-info-container {
+.trainInfoContainer {
   margin-top: 20px;
 }
 
 /* Basic table styles - can be expanded to match NestedJSONTable.css */
-.train-info-container table {
+.trainInfoContainer table {
   width: 80%;
   margin: 20px auto;
   border-collapse: collapse;
@@ -35,24 +35,24 @@
   background-color: rgba(0, 240, 255, 0.05);
 }
 
-.train-info-container th,
-.train-info-container td {
+.trainInfoContainer th,
+.trainInfoContainer td {
   border: 1px solid #00f0ff;
   padding: 8px;
   text-align: left;
 }
 
-.train-info-container th {
+.trainInfoContainer th {
   background-color: rgba(0, 240, 255, 0.1);
   color: #00f0ff;
 }
 
 /* Style the link */
-.train-info-container a {
+.trainInfoContainer a {
   color: #00f0ff;
   text-decoration: none;
 }
 
-.train-info-container a:hover {
+.trainInfoContainer a:hover {
   text-decoration: underline;
 }

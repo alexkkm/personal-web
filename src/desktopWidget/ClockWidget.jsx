@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./ClockWidget.css";
+import styles from "./ClockWidget.module.css";
 
 // Widget of displaying time
 const ClockWidget = (parameters) => {
@@ -35,12 +35,12 @@ const ClockWidget = (parameters) => {
 	});
 
 	return (
-		<div className="clockWidget"
+		<div className={styles.clockWidget}
 			onClick={() => {
 				console.log("navigate to TimeDetailsPage");
 			}}>
-			<span className="date">{date}</span>
-			<span className="time">{time}</span>
+			<span className={styles.date}>{date}</span>
+			<span className={styles.time}>{time}</span>
 		</div>
 	);
 };

@@ -1,3 +1,5 @@
+/* Button.module.css */
+
 .Button {
   display: inline-block; /* Allow it to be inline with other elements */
   margin: 0 auto; /* Center the Button div within its parent */

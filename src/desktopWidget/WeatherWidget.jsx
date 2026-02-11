@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { WiDaySunny, WiNightClear, WiRain, WiNightRain, } from "react-icons/wi";
 
-import "./WeatherWidget.css";
+import styles from "./WeatherWidget.module.css";
 
 /*
 // Simple fetch method
@@ -83,13 +83,13 @@ const WeatherWidget = (parameters) => {
 	});
 
 	return (
-		<div className="weatherWidget"
+		<div className={styles.weatherWidget}
 			onClick={() => {
 				console.log("navigate to TemperatureDetailsPage");
 			}}>
 			<span>{temperature}°C</span>
 
-			<div className="weatherIcon">
+			<div className={styles.weatherIcon}>
 				{/* Check if it is at DayTime, then display daytime icon, else display Night icon */}
 				{isDayTime === "true" ?
 					(isRainning === "true" ? <WiRain /> : <WiDaySunny />) :

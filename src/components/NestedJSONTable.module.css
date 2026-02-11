@@ -1,4 +1,4 @@
-/* NestedJSONTable.css */
+/* NestedJSONTable.module.css */
 
 .NestedJSONTable {
     color: #00f0ff; /* Text color for the Table component */
@@ -16,9 +16,9 @@
     overflow: hidden; /* Hide any overflow from the clipping path */
     margin: 0 auto; /* Center the Table div within its parent */
     width: 90%; /* Set the width of the Table div to 90% of its parent */
-  }
-  
-  .NestedJSONTable::before {
+}
+
+.NestedJSONTable::before {
     background-color: #00f0ff; /* Background color for the pseudo-element */
     bottom: 3px; /* Position from the bottom */
     content: ""; /* Empty content for the pseudo-element */
@@ -26,28 +26,27 @@
     height: 5px; /* Height of the pseudo-element */
     position: absolute; /* Positioning for the pseudo-element */
     right: -7px; /* Position from the right */
-    top: auto; /* Automatic positioning from the top */
     transform: rotate(-45deg); /* Rotate the pseudo-element */
     width: 22.627416px; /* Width of the pseudo-element */
     z-index: 100; /* Ensure it appears above other elements */
-  }
-  
-  /* Table Tag Style */
-  table {
+}
+
+/* Table Tag Style */
+table {
     width: 100%; /* Set table width to 100% of the Table div */
     border-collapse: collapse; /* Ensure borders are styled correctly */
-  }
-  
-  th, td {
+}
+
+th, td {
     border: 1px solid #00f0ff; /* Use the same border color for table cells */
     padding: 0.5rem; /* Padding inside table cells */
     text-align: left; /* Align text to the left */
-  }
-  
-  /* Table Title */
-  th[colSpan] {
+}
+
+/* Table Title */
+th[colSpan] {
     background-color: rgba(0, 240, 255, 0.03); /* Background color for title */
     color: #00f0ff; /* Title text color */
     font-size: 1.5rem; /* Adjust title font size */
     padding: 1rem; /* Add some padding around the title */
-  }
+}

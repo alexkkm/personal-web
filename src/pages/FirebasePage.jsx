@@ -8,7 +8,7 @@ import firebaseTools from "../assets/firebase";
 
 import firebaseImagePath from "../assets/firebase-Icon.png";
 import Button from '../components/Button';
-import "./FirebasePage.css";
+import styles from "./FirebasePage.module.css";
 import Dropdown from '../components/Dropdown';
 
 // Example of basic operation in firebase realtime database
@@ -433,8 +433,8 @@ const NestedTable = () => {
 // Page for firebase operation
 const FirebasePage = () => {
     return (
-        <div className="firebasePage">
-            <div className="Table">
+        <div className={styles.firebasePage}>
+            <div className={styles.firebaseTable}>
                 <NestedTable />
             </div>
             <Button label={"Back to last page"} onClick={() => window.history.back()} />

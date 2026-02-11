@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import "./Network.css";
+import styles from "./Network.module.css";
 import NewNestedJSONTable from "../components/NestedJSONTable";
 
 const NetworkPage = () => {
@@ -23,7 +23,7 @@ const NetworkPage = () => {
 
 
     return (
-        <div className="networkPage">
+        <div className={styles.networkPage}>
             <NewNestedJSONTable data={nestedTable} tableTitle="Network" />
         </div>
     );

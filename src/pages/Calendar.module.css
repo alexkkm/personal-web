@@ -1,4 +1,4 @@
-/* Calendar.css */
+/* Calendar.module.css */
 
 .Calendar {
   padding: 20px;
@@ -9,7 +9,7 @@
   position: relative;
 }
 
-.month-selector {
+.monthSelector {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -25,14 +25,14 @@
   text-align: center;
 }
 
-.calendar-grid {
+.calendarGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 10px;
   margin-bottom: 20px;
 }
 
-.calendar-day {
+.calendarDay {
   padding: 20px;
   background-color: rgba(0, 240, 255, 0.1);
   border: 1px solid #00f0ff;
@@ -41,15 +41,15 @@
   border-radius: 5px;
 }
 
-.calendar-day:hover {
+.calendarDay:hover {
   background-color: rgba(0, 240, 255, 0.2);
 }
 
-.calendar-day.empty {
+.calendarDay.empty {
   background-color: transparent; /* Hide empty cells */
 }
 
-.event-preview {
+.eventPreview {
   position: fixed; /* Position the modal */
   top: 50%;
   left: 50%;
@@ -61,7 +61,7 @@
   z-index: 1000; /* Ensure it appears above other elements */
 }
 
-.event-preview-background {
+.eventPreviewBackground {
   position: absolute; /* Position it within the modal */
   top: 0;
   left: 0;
@@ -71,7 +71,7 @@
   z-index: -1; /* Place it behind the content */
 }
 
-.modal-background {
+.modalBackground {
   position: fixed;
   top: 0;
   left: 0;
@@ -85,7 +85,7 @@
   filter: blur(5px); /* Blur effect for background */
 }
 
-.event-preview input {
+.eventPreview input {
   margin: 5px;
   padding: 5px;
   border: 1px solid #00f0ff;

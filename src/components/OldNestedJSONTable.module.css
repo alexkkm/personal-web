@@ -1,4 +1,6 @@
-.Table {
+/* NestedJSONTable.module.css */
+
+.NestedJSONTable {
     color: #00f0ff; /* Text color for the Table component */
     background-color: rgba(0, 240, 255, 0.05); /* Light background color for the Table */
     border: 1px solid #00f0ff; /* Border color for the Table */
@@ -16,7 +18,7 @@
     width: 90%; /* Set the width of the Table div to 90% of its parent */
   }
   
-  .Table::before {
+  .NestedJSONTable::before {
     background-color: #00f0ff; /* Background color for the pseudo-element */
     bottom: 3px; /* Position from the bottom */
     content: ""; /* Empty content for the pseudo-element */
@@ -30,6 +32,7 @@
     z-index: 100; /* Ensure it appears above other elements */
   }
   
+  /* Table Tag Style */
   table {
     width: 100%; /* Set table width to 100% of the Table div */
     border-collapse: collapse; /* Ensure borders are styled correctly */
@@ -39,7 +42,6 @@
     border: 1px solid #00f0ff; /* Use the same border color for table cells */
     padding: 0.5rem; /* Padding inside table cells */
     text-align: left; /* Align text to the left */
-    color: #00f0ff; /* Text color for table cells */
   }
   
   /* Table Title */

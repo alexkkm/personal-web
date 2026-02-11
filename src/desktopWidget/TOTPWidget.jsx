@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import totp from './TOTPCalculation';
-import './TOTPWidget.css';
+import styles from './TOTPWidget.module.css';
 
 const TOTPWidget=()=>{
     const secret = 'AKMKONG';
@@ -17,7 +17,7 @@ const TOTPWidget=()=>{
         }, [secret, totp]);
 
     return (
-        <div className='TOTPWidget'>
+        <div className={styles.TOTPWidget}>
         <p style={{color: "#00f0ff"}}>Secret: {secret}</p>
         <p style={{color: "#00f0ff"}}>TOTP: {otp}</p>
         <p style={{color: "#00f0ff"}}>Current Time: {currentTime}</p>

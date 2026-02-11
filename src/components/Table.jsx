@@ -1,6 +1,8 @@
+import styles from "./Table.module.css";
+
 const Table = ({ twoDimensionArrayOfElements = [], RowTitleArray = [], ColumnTitleArray = [] }) => {
     return (
-      <table>
+      <table className={styles.table}>
         <thead>
           <tr>
             {ColumnTitleArray.map((title, columnIndex) => (

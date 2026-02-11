@@ -1,4 +1,4 @@
-import "./TutorialPage.css"
+import styles from "./TutorialPage.module.css"
 
 const WeatherPage = () => {
     // weather API URL
@@ -8,7 +8,7 @@ const WeatherPage = () => {
     "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=tc";
     
     return (
-        <div className="weatherPage">
+        <div className={styles.weatherPage}>
             <p style={{ fontSize: "30px", textAlign: "center" }}>Weather Page</p>
         </div>
     )

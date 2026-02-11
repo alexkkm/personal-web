@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { RxCross2 } from "react-icons/rx";
 import { MdSettings } from "react-icons/md";
 import { BsBroadcastPin } from "react-icons/bs";
-import { FaBook } from "react-icons/fa";
+import { FaBook, FaCalendar } from "react-icons/fa";
 
-import "./NavigationBar.css"
+import styles from "./NavigationBar.module.css"
 
 // Navigation Bar
 const NavigationBar = ({ switchNavigationBar }) => {
@@ -14,33 +14,39 @@ const NavigationBar = ({ switchNavigationBar }) => {
     const navigate = useNavigate();
 
     return (
-        <div className='navigationBar'>
-            <div className="closeNavigationBarButton" onClick={switchNavigationBar}>
+        <div className={styles.navigationBar}>
+            <div className={styles.closeNavigationBarButton} onClick={switchNavigationBar}>
                 <RxCross2 />
             </div>
             <NavigationBarWidget
-                className="setting"
+                className={styles.setting}
                 icon={<MdSettings style={{ color: '#00f0ff' }} />}
                 title="setting"
                 onClick={() => { console.log("navigate to setting page") }}
             />
             <NavigationBarWidget
-                className="network"
+                className={styles.network}
                 icon={<BsBroadcastPin style={{ color: '#00f0ff' }} />}
                 title="network"
                 onClick={() => navigate("/network")}
             />
             <NavigationBarWidget
-                className="tutorial"
+                className={styles.tutorial}
                 icon={<FaBook style={{ color: '#00f0ff' }} />}
                 title="tutorial"
                 onClick={() => navigate("/tutorial")}
             />
             <NavigationBarWidget
-                className="testing"
+                className={styles.testing}
                 icon={<FaBook style={{ color: '#00f0ff' }} />}
                 title="testing"
                 onClick={() => navigate("/testing")}
+            />
+            <NavigationBarWidget
+                className={styles.testing}
+                icon={<FaCalendar style={{ color: '#00f0ff' }} />}
+                title="Calendar"
+                onClick={() => navigate("/calendar")}
             />
         </div>
     );
@@ -49,7 +55,7 @@ const NavigationBar = ({ switchNavigationBar }) => {
 // The single Navigation Widget
 const NavigationBarWidget = ({ icon, title, onClick }) => {
     return (
-        <div className="navigationBarWidget" onClick={onClick}>
+        <div className={styles.navigationBarWidget} onClick={onClick}>
             <BarWidgetIcon icon={icon} />
             <BarWidgetTitle title={title} />
         </div>
@@ -58,7 +64,7 @@ const NavigationBarWidget = ({ icon, title, onClick }) => {
 
 const BarWidgetIcon = ({ icon }) => {
     return (
-        <div className="barWidgetIcon">
+        <div className={styles.barWidgetIcon}>
             {icon}
         </div>
     )
@@ -66,7 +72,7 @@ const BarWidgetIcon = ({ icon }) => {
 
 const BarWidgetTitle = ({ title }) => {
     return (
-        <div className="barWidgetTitle">
+        <div className={styles.barWidgetTitle}>
             <p style={{ color: '#00f0ff' }}>{title}</p>
         </div>
     )

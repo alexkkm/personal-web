@@ -3,7 +3,7 @@ import trainData from './MTR.json'; // Import the JSON data
 import Dropdown from '../components/Dropdown'; // Import the Dropdown component
 import Button from "../components/Button";
 import NestedJSONTable from '../components/NestedJSONTable'; // Import the NestedJSONTable component
-import './MTR.css'; // Import the MTR.css file for styling
+import styles from './MTRPage.module.css'; // Import the MTR.css file for styling
 
 const MTRPage = () => {
   const initialLine = 'AEL'; // Get the first line's code if available
@@ -171,10 +171,10 @@ const MTRPage = () => {
   };
 
   return (
-    <div className='mtr-page'>
+    <div className={styles.mtrPage}>
       <BackHomeButton style={{textAlign: 'left'}}/>
       <h1>Train Information</h1>
-      <div className='dropdown-container'>
+      <div className={styles.dropdownContainer}>
         <label htmlFor='lineSelect'>Select Train Line:</label>
         <Dropdown
           options={lineOptions}
@@ -182,7 +182,7 @@ const MTRPage = () => {
           value={selectedLine}
         />
       </div>
-      <div className='dropdown-container'>
+      <div className={styles.dropdownContainer}>
         <label htmlFor='stationSelect'>Select Station:</label>
         <Dropdown
           options={stationOptions}
@@ -191,7 +191,7 @@ const MTRPage = () => {
           disabled={!selectedLine}
         />
       </div>
-      <div className='train-info-container'>
+      <div className={styles.trainInfoContainer}>
         {selectedLine && selectedStation ? (
           renderTrainInfo()
         ) : (

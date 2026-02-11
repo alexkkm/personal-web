@@ -1,4 +1,4 @@
-import "./TutorialPage.css"
+import styles from "./TutorialPage.module.css"
 
 import Table from "../components/Table"
 import MessageBoard from "../components/MessageBoard"
@@ -7,7 +7,7 @@ import Button from "../components/Button"
 const TutorialPage = () => {
 
     return (
-        <div className="tutorialPage">
+        <div className={styles.tutorialPage}>
             <p style={{ fontSize: "30px", textAlign: "center" }}>Tutorial Page</p>
             <hr />
             <div>

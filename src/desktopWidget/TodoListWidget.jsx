@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./TodoListWidget.css"
+import styles from "./TodoListWidget.module.css"
 
 // Widget of displaying Todo List
 const TodoListWidget = (parameters) => {
@@ -13,7 +13,7 @@ const TodoListWidget = (parameters) => {
     }, []);
 
     return (
-        <div className="TodoListWidget"
+        <div className={styles.TodoListWidget}
             onClick={() => {
                 console.log("navigate to TodoListPage");
             }}>

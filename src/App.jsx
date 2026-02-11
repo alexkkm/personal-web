@@ -1,7 +1,7 @@
 // Basic tools
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
-// Styling
+// Global Styling: store the font or other global styles only
 import "./App.css";
 
 // Pages
@@ -12,6 +12,7 @@ import NetworkPage from "./pages/Network";
 import LocalStorageTutorial from "./tutorial/LocalStorage";
 import FirebasePage from "./pages/FirebasePage";
 import TutorialPage from "./pages/TutorialPage";
+import Calendar from "./pages/Calendar";
 
 // The main componenet of the app
 function App() {
@@ -43,6 +44,9 @@ function App() {
 				<Route
 					path="/localStorage"
 					element={<LocalStorageTutorial />} />
+				<Route
+					path="/calendar"
+					element={<Calendar />} />
 
 			</Routes>
 		</BrowserRouter>

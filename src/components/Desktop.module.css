@@ -1,0 +1,74 @@
+/* Desktop.module.css */
+
+/** Elements **/
+.desktop{
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+}
+
+.settingButton{
+/* Position */
+top: 5px;
+left: 5px;
+
+/* Outshape */
+height: 20px;
+width: 20px;
+
+/* Size */
+font-size: 20px;
+
+/* Color */
+color: #00f0ff;
+
+/* Effect */
+cursor: pointer;
+}
+
+/** Hidden Area (Make sure it is render on the top left corner and not be affected by the blur effect) **/
+.hiddenArea{
+position: absolute;
+top: 0;
+left: 0;
+}
+
+/** Effect **/
+
+/** For bluring effect and hidden effect for navigationBar **/
+.switchNavigationBarButton {
+  transition: filter 0.3s ease-in-out; /* Add a transition for smooth blur effect */
+}
+.switchNavigationBarButton.hidden {
+display: none;
+}
+
+/** For bluring effect and hidden effect for desktop **/
+.mainScreen {
+transition: filter 0.3s ease-in-out;
+}
+
+.mainScreen.blurred {
+filter: blur(10px);
+pointer-events: none;
+}
+
+.mainScreen.hidden {
+display: none;
+}
+
+.layout {
+background-color: #000;
+}
+
+.gridItem {
+background-color: #000000;
+border: 1px solid #00f0ff;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.gridItem:hover {
+background-color: rgba(0, 240, 255, 0.1);
+}

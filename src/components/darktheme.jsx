@@ -1,14 +1,17 @@
-import "./darktheme.css";
+import styles from"./darktheme.module.css";
 
 const MessageBoard = (parameters) => {
 	return (
-		<div class="darkThemePage">
-			<div class="messageBoard">
-				<div class="pad">
-					<div class="pad__body">
-						<h4 class="text-heading3 undefined">{parameters.title}</h4>
-						{parameters.textList.map((text) => {
-							return <p>{text}</p>;
+		<div className={styles.darkThemePage}>
+			<div className={styles.messageBoard}>
+				<div className={styles.pad}>
+					<div className={styles.pad__body}>
+						<h4 className={styles.text_heading}>{parameters.title}</h4>
+						{parameters.textList.map((text,key) => {
+							return(
+								<div key={key}>
+									<p>{text}</p>
+								</div>);
 						})}
 					</div>
 				</div>

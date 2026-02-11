@@ -1,3 +1,5 @@
+/* darktheme.module.css */
+
 * {
     box-sizing: border-box;
     position: relative;
@@ -40,7 +42,7 @@
     );
   }
   
-  .pad__body {
+  .padBody {
     padding: 0.75rem;
     padding-bottom: 1rem;
     color:#00f0ff

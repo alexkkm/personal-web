@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TableExample.css';
+import styles from './TableExample.module.css';
 
 const TableExample = () => {
 
@@ -67,7 +67,7 @@ const TableExample = () => {
     };
 
     return (
-        <div className="Table">
+        <div className={styles.Table}>
             <table>
                 <thead>
                     <tr>
@@ -96,7 +96,7 @@ const TableExample = () => {
                                                 onChange={(e) => handleChange(rowIndex, colIndex, e.target.value)}
                                                 style={{ borderColor: '#00f0ff' }}
                                             />
-                                            <button className="delete-button" onClick={() => deleteCell(rowIndex, colIndex)}>Delete</button>
+                                            <button className={styles.delete-button} onClick={() => deleteCell(rowIndex, colIndex)}>Delete</button>
                                         </>
                                     ) : null} {/* Render nothing if the cell is deleted */}
                                 </td>
@@ -106,9 +106,9 @@ const TableExample = () => {
                 </tbody>
             </table>
 
-            <div className="button-container">
-                <Button className="table-button" label={"Add Row"} onClick={addRow} />
-                <Button className="table-button" label={"Add Column"} onClick={addColumn} />
+            <div className={styles.buttonContainer}>
+                <Button className={styles.tableButton} label={"Add Row"} onClick={addRow} />
+                <Button className={styles.tableButton} label={"Add Column"} onClick={addColumn} />
             </div>
         </div>
     );
@@ -119,8 +119,8 @@ export default TableExample;
 
 const Button = ({ label, onClick }) => {
     return (
-        <div className="Button">
-            <button className="button" onClick={onClick}>
+        <div className={styles.Button}>
+            <button className={styles.button} onClick={onClick}>
                 {label}
             </button>
         </div>

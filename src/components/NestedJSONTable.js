@@ -1,5 +1,5 @@
 import React from 'react';
-import './NestedJSONTable.css';
+import styles from './NestedJSONTable.module.css';
 
 const renderCellContent = (value) => {
   if (typeof value === 'object' && value !== null) {
@@ -14,8 +14,8 @@ const renderCellContent = (value) => {
 const NestedJSONTable = ({ data, tableTitle }) => {
   const renderTable = (obj, parentKey) => {
     return (
-      <div className="NestedJSONTable" style={{ marginBottom: '20px' }}>
-        <table className="table" border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <div className={styles.NestedJSONTable} style={{ marginBottom: '20px' }}>
+        <table className={styles.table} border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
           <tbody>
             {Object.entries(obj).map(([key, value]) => {
               const currentPath = `${parentKey}/${key}`;
@@ -33,7 +33,7 @@ const NestedJSONTable = ({ data, tableTitle }) => {
   };
 
   return (
-    <div className="NestedJSONTable">
+    <div className={styles.NestedJSONTable}>
       <h1 style={{ textAlign: 'center', paddingTop: '10px' }}>{tableTitle}</h1>
       {renderTable(data, '')}
     </div>
