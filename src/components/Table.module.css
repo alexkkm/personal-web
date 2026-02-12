@@ -37,17 +37,30 @@
     border-collapse: collapse; /* Ensure borders are styled correctly */
   }
   
-  thead, td {
-    border: 1px solid #00f0ff; /* Use the same border color for table cells */
-    padding: 0.5rem; /* Padding inside table cells */
-    text-align: left; /* Align text to the left */
-    color: #00f0ff; /* Text color for table cells */
-  }
-  
   /* Table Title */
-  thead[colSpan] {
+  .TableTitle{
     background-color: rgba(0, 240, 255, 0.03); /* Background color for title */
+    border: 1px solid #00f0ff; /* Use the same border color for table cells */
     color: #00f0ff; /* Title text color */
     font-size: 1.5rem; /* Adjust title font size */
     padding: 1rem; /* Add some padding around the title */
+    text-align: center; /* Align text to the left */
   }
+
+  /* Column Title */
+  .ColumnTitle{
+    border: 1px solid #00f0ff; /* Use the same border color for table cells */
+    padding: 0.5rem; /* Padding inside table cells */
+    text-align: center; /* Align text to the left */
+    color: #00f0ff; /* Text color for table cells */
+  }
+  
+  /* Row Title */
+  .RowTitle{
+    border: 1px solid #00f0ff; /* Use the same border color for table cells */
+    padding: 0.5rem; /* Padding inside table cells */
+    text-align: center; /* Align text to the left */
+    color: #00f0ff; /* Text color for table cells */
+  }
+
+  
