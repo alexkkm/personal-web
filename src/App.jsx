@@ -7,7 +7,7 @@ import "./App.css";
 // Pages
 import Desktop from "./components/Desktop";
 import DarkThemePage from "./components/darktheme";
-import TestingPage from "./pages/TestingPage";
+import TestingPage from "./testing/TestingPage";
 import NetworkPage from "./pages/Network";
 import LocalStorageTutorial from "./tutorial/LocalStorage";
 import FirebasePage from "./pages/FirebasePage";
