@@ -12,6 +12,7 @@ import WeatherWidget from '../desktopWidget/WeatherWidget';
 import ClockWidget from '../desktopWidget/ClockWidget';
 import TodoListWidget from '../desktopWidget/TodoListWidget';
 import TOTPWidget from '../desktopWidget/TOTPWidget';
+import NewsMarquee from '../testing/NewsMarquee';
 
 // indicate the current pathname and display it
 const PathNameIndicator = () => {
@@ -47,8 +48,12 @@ const Desktop = () => {
   return (
     <div className={styles.desktop}>
       <div className={`${styles.mainScreen} ${isBlurred ? styles.blurred : ''}`}>
-        <TfiViewListAlt className={styles.settingButton} onClick={switchNavigationBar} />
-
+        <div className={styles.topBar}>
+          <TfiViewListAlt className={styles.settingButton} onClick={switchNavigationBar} />
+          <div className={styles.newsMarquee}>
+            <NewsMarquee />
+          </div>
+        </div>
         <GridLayout
           className={styles.layout}
           layout={layout}

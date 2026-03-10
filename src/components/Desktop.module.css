@@ -7,10 +7,17 @@
   height: 100%;
 }
 
+.topBar{
+  display: flex;
+  justify-content: start;
+  align-items: left;
+  width: 100%;
+}
+
 .settingButton{
 /* Position */
-top: 5px;
-left: 5px;
+margin-top: 5px;
+margin-left: 5px;
 
 /* Outshape */
 height: 20px;
@@ -24,6 +31,18 @@ color: #00f0ff;
 
 /* Effect */
 cursor: pointer;
+}
+
+.newsMarquee{
+  /* Position */
+  margin-left: 5px;
+  margin-top: 5px;
+
+  /* Size */ 
+  /* Calculation using css varaible and calc() */
+  --height-calc: calc(100% - 25px - 5px);
+  --width-calc: calc(100% - 25px - 5px);
+  width: var(--width-calc);
 }
 
 /** Hidden Area (Make sure it is render on the top left corner and not be affected by the blur effect) **/
