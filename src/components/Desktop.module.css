@@ -40,7 +40,6 @@ cursor: pointer;
 
   /* Size */ 
   /* Calculation using css varaible and calc() */
-  --height-calc: calc(100% - 25px - 5px);
   --width-calc: calc(100% - 25px - 5px);
   width: var(--width-calc);
 }
@@ -76,8 +75,9 @@ pointer-events: none;
 display: none;
 }
 
-.layout {
-background-color: #000;
+.gridLayout {
+background-color: #000000;
+width: 100%
 }
 
 .gridItem {

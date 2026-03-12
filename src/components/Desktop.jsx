@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import GridLayout from 'react-grid-layout';
+import GridLayout, { useContainerWidth} from 'react-grid-layout';
 import { TfiViewListAlt } from 'react-icons/tfi';
 
 import styles from './Desktop.module.css';
@@ -32,6 +32,9 @@ const Desktop = () => {
     setIsButtonActive(true);
   };
 
+  // define the variable using react-grid-layout method
+  const { width, containerRef, mounted } = useContainerWidth();
+
   // state to save the Layout of the widget
   const [layout, setLayout] = useState([
     { i: 'weatherWidget', x: 0, y: 1, w: 1, h: 5 },
@@ -54,27 +57,28 @@ const Desktop = () => {
             <NewsMarquee />
           </div>
         </div>
-        <GridLayout
-          className={styles.layout}
-          layout={layout}
-          cols={3}
-          rowHeight={30}
-          width={1200}
-          onLayoutChange={onLayoutChange}
-        >
-          <div key="weatherWidget" className={styles.gridItem}>
-            <WeatherWidget />
-          </div>
-          <div key="clockWidget" className={styles.gridItem}>
-            <ClockWidget />
-          </div>
-          <div key="todoListWidget" className={styles.gridItem}>
-            <TodoListWidget />
-          </div>
-          <div key="totpWidget" className={styles.gridItem}>
-            <TOTPWidget />
-          </div>
-        </GridLayout>
+        <div ref={containerRef}>
+          {mounted && <GridLayout
+            className={styles.layout}
+            layout={layout}
+            width={width}
+            onLayoutChange={onLayoutChange}
+            gridConfig={{cols: 3, rowHeight: 30}}
+          >
+            <div key="weatherWidget" className={styles.gridItem}>
+              <WeatherWidget />
+            </div>
+            <div key="clockWidget" className={styles.gridItem}>
+              <ClockWidget />
+            </div>
+            <div key="todoListWidget" className={styles.gridItem}>
+              <TodoListWidget />
+            </div>
+            <div key="totpWidget" className={styles.gridItem}>
+              <TOTPWidget />
+            </div>
+          </GridLayout>}
+        </div>
       </div>
       <div className={styles.hiddenArea}>
         <div className={`${styles.switchNavigationBarButton} ${isBlurred ? '' : styles.hidden}`}>
