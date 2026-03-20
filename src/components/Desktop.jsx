@@ -61,7 +61,7 @@ const Desktop = () => {
         </div>
         <div ref={containerRef}>
           {mounted && <GridLayout
-            className={styles.layout}
+            className={styles.gridLayout}
             layout={layout}
             width={width}
             onLayoutChange={onLayoutChange}

@@ -76,12 +76,12 @@ display: none;
 }
 
 .gridLayout {
-background-color: #000000;
+background-color: #ffffff00;
 width: 100%
 }
 
 .gridItem {
-background-color: #000000;
+background-color: #ffffff00;
 border: 1px solid #00f0ff;
 display: flex;
 justify-content: center;
