@@ -12,6 +12,7 @@ import WeatherWidget from '../desktopWidget/WeatherWidget';
 import ClockWidget from '../desktopWidget/ClockWidget';
 import TodoListWidget from '../desktopWidget/TodoListWidget';
 import TOTPWidget from '../desktopWidget/TOTPWidget';
+import StockWidget from '../desktopWidget/StockWidget';
 import NewsMarquee from '../testing/NewsMarquee';
 
 // indicate the current pathname and display it
@@ -37,10 +38,11 @@ const Desktop = () => {
 
   // state to save the Layout of the widget
   const [layout, setLayout] = useState([
-    { i: 'weatherWidget', x: 0, y: 1, w: 1, h: 5 },
+    { i: 'weatherWidget', x: 0, y: 0, w: 1, h: 5 },
     { i: 'clockWidget', x: 0, y: 5, w: 1, h: 5 },
     { i: 'todoListWidget', x: 1, y: 1, w: 1, h: 5 },
     { i: 'totpWidget', x: 1, y: 5, w: 1, h: 5 },
+    { i: 'stockWidget', x: 0, y: 10, w: 1, h: 5 },
   ]);
 
   // method to update the layout state when the layout changes
@@ -76,6 +78,9 @@ const Desktop = () => {
             </div>
             <div key="totpWidget" className={styles.gridItem}>
               <TOTPWidget />
+            </div>
+            <div key="stockWidget" className={styles.gridItem}>
+              <StockWidget />
             </div>
           </GridLayout>}
         </div>

@@ -1,0 +1,30 @@
+.stockWidget{
+  /* Out shape */
+  width: 500px;
+  height: 200px;
+
+  /* background */
+  background-color: #ffffff00;
+
+  /* Inner element lying*/
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.stocksData{
+  color: #00f0ff
+}
+.stockCardText{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.changePositive {
+  color: #00ff00;
+}
+.changeNegative {
+  color: #fd1c03;
+}
