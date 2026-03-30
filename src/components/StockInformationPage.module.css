@@ -1,0 +1,135 @@
+.stockInformationPage{
+  background-color: #000000ff;
+}
+
+.indicesHeader{
+  color: #00f0ff;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.watchListHeader{
+  color: #00f0ff;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.stocksData{
+  color: #00f0ff;
+  display: flex;
+}
+
+.stockCards{
+  /* Out Shape*/
+  width: 180px;
+  height: 100px;
+
+  margin: 5px;
+  padding: 5px;
+
+  /* border */
+  border: 1px solid #00f0ff;
+  border-radius: 2px;
+}
+.stockCardsText{
+  font-size: 15px;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.changePositive {
+  color: #00ff00;
+}
+.changeNegative {
+  color: #fd1c03;
+}
+
+
+.stockInformationSearchTitle{
+  color: #00f0ff;
+  font-weight: 900;
+}
+
+.searchButton{
+  /* Size */
+  width: 60px;
+  height: 30px;
+
+  margin:5px;
+
+  text-align: center;
+
+  color: #00f0ff;
+  background-color: #00000000;
+
+  /* Border */
+  border-radius: 5px;
+  border: 1px solid #00f0ff;
+}
+
+.stockCodeInput{
+  /* size */
+  width: 125px;
+
+  background-color: #000000ff;
+
+  /* border */
+  border: 1px solid #00f0ff;
+  border-radius: 2px;
+  
+  /* inner text color */
+  color: #00f0ff;
+}
+
+.inputArea{
+  display: flex;
+}
+
+.searchForm {
+  display: block; /* keep default form behavior */
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between label, input, and button /
+  flex-wrap: nowrap; / keep them on one line */
+}
+
+.searchLabel {
+  color: #00f0ff;
+  white-space: nowrap; /* prevent label text from wrapping */
+  margin-right: 4px;
+}
+
+
+.stockDetailsInformationCard{
+  /* border */
+  border: 1px solid #00f0ff;
+  border-radius: 2px;
+
+  /* margin and padding */
+  margin: 10px;
+  padding: 5px;
+}
+
+.stockDetailsHeader{
+  color: #00f0ff;
+  font-weight: 800;
+  font-size: 20px;
+
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.stockDetails{
+  color: #00f0ff;
+
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.stockDetailsPrice{
+  color: #00f0ff;
+}

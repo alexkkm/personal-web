@@ -13,6 +13,7 @@ import LocalStorageTutorial from "./tutorial/LocalStorage";
 import FirebasePage from "./pages/FirebasePage";
 import TutorialPage from "./pages/TutorialPage";
 import Calendar from "./pages/Calendar";
+import StockInformationPage from "./components/StockInformationPage";
 
 // The main componenet of the app
 function App() {
@@ -47,6 +48,9 @@ function App() {
 				<Route
 					path="/calendar"
 					element={<Calendar />} />
+				<Route
+					path="/stockInformationPage"
+					element={<StockInformationPage />} />
 
 			</Routes>
 		</BrowserRouter>

@@ -3,6 +3,8 @@
 //https://cnb.cool/arsrna/websites/os/-/blob/master/pages/demo/tencent-stock-api/index.tsx
 
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import styles from "./StockWidget.module.css";
 
 const APIEP = "https://qt.gtimg.cn";
@@ -61,6 +63,9 @@ const StockWidget = () => {
   // If your stock list is static, define it outside of render to avoid effect re-run:
   const stocksCodeList = ["hkHSI","hk00005"];
 
+  // usenavigate
+  const navigate = useNavigate();
+
   useEffect(() => {
     let cancelled = false;
     async function fetchAll() {
@@ -104,8 +109,11 @@ const StockWidget = () => {
     );
   }
 
+
+  
   return (
-    <div className={styles.stockWidget}>
+    <div className={styles.stockWidget}
+    onClick={() =>navigate("/stockInformationPage")}>
       <div className={styles.stocksData}>
         {stocksData.map((s) => {
           const change = parseFloat(s.priceChange) || 0;
