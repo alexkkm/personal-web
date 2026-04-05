@@ -2,16 +2,45 @@
   background-color: #000000ff;
 }
 
+.pageTitle{
+  margin: 5px;
+
+  color: #00f0ff;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.refreshButton{
+  /* Size */
+  width: 80px;
+  height: 30px;
+
+  margin:5px;
+
+  text-align: center;
+
+  color: #00f0ff;
+  background-color: #00000000;
+
+  /* Border */
+  border-radius: 5px;
+  border: 1px solid #00f0ff;
+}
+
 .indicesHeader{
   color: #00f0ff;
   font-weight: 800;
   font-size: 20px;
+
+  margin: 5px;
 }
 
 .watchListHeader{
   color: #00f0ff;
   font-weight: 800;
   font-size: 20px;
+
+  margin: 5px;
 }
 
 .stocksData{
@@ -48,6 +77,8 @@
 .stockInformationSearchTitle{
   color: #00f0ff;
   font-weight: 900;
+
+  margin: 5px;
 }
 
 .searchButton{
@@ -83,6 +114,8 @@
 
 .inputArea{
   display: flex;
+
+  margin: 5px;
 }
 
 .searchForm {
@@ -109,7 +142,7 @@
   border-radius: 2px;
 
   /* margin and padding */
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
 }
 

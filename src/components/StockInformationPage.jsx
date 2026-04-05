@@ -60,6 +60,7 @@ const StockInformationPage = () => {
   const [stocksData, setStocksData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [refreshed, setRefreshed] = useState(false); // Add a state variable to track whether the data has been refreshed or not
 
   // State for user input area
   const [userInputCode, setUserInputCode] = useState("hk00005");
@@ -116,6 +117,63 @@ const StockInformationPage = () => {
       cancelled = true;
     };
   }, []); // Empty dependency array as stocksCodeList is static
+
+  // Handler for the refresh button click
+  const handleRefreshClick = useCallback(async () => {
+    let cancelled = false;
+    async function fetchAll() {
+      setLoading(true);
+      setError(null);
+       
+      // try fetch the indicesData from API
+      try {
+        // fetch indicesResult concurrently
+        const indicesPromises = indicesCodeList.map((code) => GetStockInfo(code));
+        const indicesResults = await Promise.all(indicesPromises);
+        if (!cancelled) {
+          setIndicesData(indicesResults);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          console.error("Error fetching initial indices data:", err);
+          setError(err.message || "Unknown error fetching initial indices list");
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+
+      // try fetch the stocksData from API
+      try {
+        // fetch stocksResult concurrently
+        const stockPromises = stocksCodeList.map((code) => GetStockInfo(code));
+        const stockResults = await Promise.all(stockPromises);
+        if (!cancelled) {
+          setStocksData(stockResults);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          console.error("Error fetching initial stock data:", err);
+          setError(err.message || "Unknown error fetching initial stock list");
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    setLoading(true);
+    setError(null);
+    setRefreshed(false); // Reset the 'refreshed' state to false before fetching the data again
+
+    // Fetch the data again
+    try {
+      await fetchAll();
+    } catch (err) {
+      console.error("Error refreshing stock data:", err);
+      setError(err.message || "Unknown error");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   // Function to handle fetching a single stock by user input
   const fetchSingleStock = useCallback(async (stockCode) => {
@@ -229,6 +287,9 @@ const StockInformationPage = () => {
 
   return (
     <div className={styles.stockInformationPage}>
+      <h1 className={styles.pageTitle}>Stock Information Dashboard</h1>
+      <button className={styles.refreshButton} onClick={handleRefreshClick}>Refresh</button>
+      
       {/* 1. Display Area for Pre-set Stocks (Brief Information) */}
       <h2 className={styles.indicesHeader}>Indices</h2>
       <div className={styles.stocksData}>
