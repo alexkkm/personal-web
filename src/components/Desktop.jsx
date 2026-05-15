@@ -13,7 +13,7 @@ import ClockWidget from '../desktopWidget/ClockWidget';
 import TodoListWidget from '../desktopWidget/TodoListWidget';
 import TOTPWidget from '../desktopWidget/TOTPWidget';
 import StockWidget from '../desktopWidget/StockWidget';
-import NewsMarquee from '../testing/NewsMarquee';
+import NewsMarquee from '../desktopWidget/NewsMarquee';
 
 // indicate the current pathname and display it
 const PathNameIndicator = () => {

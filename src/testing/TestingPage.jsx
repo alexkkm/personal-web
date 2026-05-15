@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Table from '../components/Table';
-import NewsMarquee from './NewsMarquee';
+import NewsMarquee from '../desktopWidget/NewsMarquee';
 
 const TestingPage = () => {
 
