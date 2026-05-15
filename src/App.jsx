@@ -14,6 +14,7 @@ import FirebasePage from "./pages/FirebasePage";
 import TutorialPage from "./pages/TutorialPage";
 import Calendar from "./pages/Calendar";
 import StockInformationPage from "./components/StockInformationPage";
+import NewsPage from "./pages/NewsPage";
 
 // The main componenet of the app
 function App() {
@@ -51,6 +52,9 @@ function App() {
 				<Route
 					path="/stockInformationPage"
 					element={<StockInformationPage />} />
+				<Route
+					path="/news"
+					element={<NewsPage />} />
 
 			</Routes>
 		</BrowserRouter>
