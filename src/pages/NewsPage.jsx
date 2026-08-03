@@ -2,17 +2,18 @@ import React, { useState,useEffect } from "react";
 
 import styles from "./NewsPage.module.css";
 
-const NewsCard = ({ title, description, onClick }) => (
+const NewsCard = ({ title, description, onClick, setSelectedNews  }) => (
   <div className="news-card" onClick={onClick}>
     <h3>{title}</h3>
     <p>{description}</p>
   </div>
 );
 
-const NewsBox = ({ title, description, onClose }) => {
+const NewsBox = ({ title, description, onClose, setSelectedNews }) => {
   const [isBoxVisible, setIsBoxVisible] = useState(true);
 
   const handleBoxClose = () => {
+    setSelectedNews({});
     setIsBoxVisible(false);
     onClose();
   };
@@ -27,15 +28,16 @@ const NewsBox = ({ title, description, onClose }) => {
 };
 
 const NewsPage = () => {
-  const [selectedNews, setSelectedNews] = useState(null);
+  const [selectedNews, setSelectedNews] = useState({});
   const [newsData, setNewsData] = useState({ results: [] });
 
   const handleNewsClick = (title, description) => {
+    console.log("Clicked a news")
     setSelectedNews({ title, description });
   };
 
   const handleCloseBox = () => {
-    setSelectedNews(null);
+    setSelectedNews({});
   };
 
   useEffect(() => {
@@ -50,35 +52,38 @@ const NewsPage = () => {
         console.error(error);
       }
     };
-
     fetchNews();
   }, []);
 
   return (
     <div className={styles.newsPage}>
-      <div className={styles.newsCards}>
+      <button onClick={console.log("log: "+JSON.stringify(selectedNews))}>Log</button>
+      {Object.keys(selectedNews).length === 0 && (
+        <div className={styles.newsCards}>
         {newsData.results.map((result, index) => (
           <NewsCard
             key={index}
             title={result.title}
             description={result.description}
             onClick={() => handleNewsClick(result.title, result.description)}
+            setSelectedNews={setSelectedNews}
             style={{ opacity: selectedNews? 0: 0.5}}
           />
         ))}
       </div>
-      {selectedNews && (
+      )
+      }
+      
+      {Object.keys(selectedNews).length !== 0 && (
         <div className={styles.newsBoxContainer}>
           <NewsBox
             title={selectedNews.title}
             description={selectedNews.description}
             onClose={handleCloseBox}
-            style={{ opacity: selectedNews ? 0.5 : 0 }}
+            setSelectedNews={setSelectedNews}
+
+            style={{ opacity: selectedNews ? 1 : 0 }}
           />
-          <div
-            className={styles.blur}
-            onClick={handleCloseBox}
-          ></div>
         </div>
       )}
     </div>
