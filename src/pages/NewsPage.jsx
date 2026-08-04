@@ -2,10 +2,17 @@ import React, { useState,useEffect } from "react";
 
 import styles from "./NewsPage.module.css";
 
+const truncateText = (text, maxLength) => {
+  if (text.length <= maxLength) {
+    return text;
+  }
+  return text.slice(0, maxLength) + '...';
+};
+
 const NewsCard = ({ title, description, onClick, setSelectedNews  }) => (
-  <div className="news-card" onClick={onClick}>
+  <div className={styles.singleNewsCard} onClick={onClick} >
     <h3>{title}</h3>
-    <p>{description}</p>
+    <p>{truncateText(description, 100)}</p> {/* Limit the length of the description to 100 characters */}
   </div>
 );
 
@@ -57,9 +64,9 @@ const NewsPage = () => {
 
   return (
     <div className={styles.newsPage}>
-      <button onClick={console.log("log: "+JSON.stringify(selectedNews))}>Log</button>
+      {/* Display the news cards if there are no selected news*/}
       {Object.keys(selectedNews).length === 0 && (
-        <div className={styles.newsCards}>
+        <div className={styles.newsCardsArea}>
         {newsData.results.map((result, index) => (
           <NewsCard
             key={index}
@@ -67,13 +74,13 @@ const NewsPage = () => {
             description={result.description}
             onClick={() => handleNewsClick(result.title, result.description)}
             setSelectedNews={setSelectedNews}
-            style={{ opacity: selectedNews? 0: 0.5}}
+            style={{ opacity: selectedNews? 0 : 1}}
           />
         ))}
       </div>
       )
       }
-      
+      {/* Display the news box if there is a selected news*/}
       {Object.keys(selectedNews).length !== 0 && (
         <div className={styles.newsBoxContainer}>
           <NewsBox

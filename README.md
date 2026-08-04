@@ -15,3 +15,6 @@ The app is a single-page application with React.
 ## Tips of using browser within Vscode
 ctrl+shift+P type simple browser
 type http://localhost:3000
+
+# Hints word for windsurf agent
+I am now doing the React.js project. Please familiar yourself with the whole directory.
